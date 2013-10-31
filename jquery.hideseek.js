@@ -36,7 +36,7 @@
 
         $(options.datalist).children().each(function() {
 
-          var data = $(this).text().toLowerCase();
+          var data = (options.dataattr != 'text') ? $(this).attr(options.dataattr).toLowerCase() : $(this).text().toLowerCase();
 
           if (data.indexOf(q) == -1) {
 
