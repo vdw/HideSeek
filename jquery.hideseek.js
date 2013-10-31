@@ -32,13 +32,13 @@
 
     $(this).each(function() {
 
-      // Ungly overwrite
-      options.list      = $(this).data('list') || options.list;
-      options.attribute = $(this).data('attribute') || options.attribute;
-
       var $this = $(this);
 
       $this.keyup(function() {
+
+        // Ungly overwrite
+        options.list      = $(this).data('list') || options.list;
+        options.attribute = $(this).data('attribute') || options.attribute;
 
         var q = $this.val().toLowerCase();
 
