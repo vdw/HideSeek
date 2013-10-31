@@ -23,8 +23,8 @@
   $.fn.hideseek = function(options) {
 
     var defaults = {
-      datalist:   '.hideseek-list',
-      dataattr:   'text',
+      list:       '.hideseek-data',
+      attribute:  'text',
       highlight:  false
     };
 
@@ -32,15 +32,19 @@
 
     $(this).each(function() {
 
+      // Ungly overwrite
+      options.list      = $(this).data('list') || options.list;
+      options.attribute = $(this).data('attribute') || options.attribute;
+
       var $this = $(this);
 
       $this.keyup(function() {
 
         var q = $this.val().toLowerCase();
 
-        $(options.datalist).children().each(function() {
+        $(options.list).children().each(function() {
 
-          var data = (options.dataattr != 'text') ? $(this).attr(options.dataattr).toLowerCase() : $(this).text().toLowerCase();
+          var data = (options.attribute != 'text') ? $(this).attr(options.attribute).toLowerCase() : $(this).text().toLowerCase();
 
           if (data.indexOf(q) == -1) {
 
@@ -63,7 +67,6 @@
   $(document).ready(function () { $('[data-toggle="hideseek"]').hideseek(); });
 
 })(jQuery);
-
 
 /*
 
