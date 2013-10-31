@@ -24,6 +24,7 @@
 
     var defaults = {
       list:       '.hideseek-data',
+      nodata:     '',
       attribute:  'text',
       highlight:  false
     };
@@ -38,11 +39,14 @@
 
         // Ungly overwrite
         options.list      = $(this).data('list') || options.list;
+        options.nodata    = $(this).data('nodata') || options.nodata;
         options.attribute = $(this).data('attribute') || options.attribute;
 
         var q = $this.val().toLowerCase();
 
-        $(options.list).children().each(function() {
+        var $list = $(options.list);
+
+        $list.children().each(function() {
 
           var data = (options.attribute != 'text') ? $(this).attr(options.attribute).toLowerCase() : $(this).text().toLowerCase();
 
@@ -57,6 +61,19 @@
           }
 
         });
+
+        // No results message
+        if (options.nodata) {
+
+          $list.find('.no-results').remove();
+
+          if ($list.children(':not([style*="display: none"])').length == 0) {
+
+            $list.children().first().clone().addClass('no-results').show().prependTo(options.list).contents().text(options.nodata);
+
+          }
+
+        }
 
       });
 
