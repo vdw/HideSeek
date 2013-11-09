@@ -69,7 +69,7 @@
 
           if ($list.children(':not([style*="display: none"])').length == 0) {
 
-            $list.children().first().clone().addClass('no-results').show().prependTo(options.list).contents().text(options.nodata);
+            $list.children().first().clone().addClass('no-results').show().prependTo(options.list).text(options.nodata);
 
           }
 
