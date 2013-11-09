@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>HideSeek jQuery plugin | A simple, yet customizable live search jQuery plugin</title>
+	<meta name="description" content="Yet another plugin for tabs">
+
+	<!-- STYLES -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/typography.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/github.css">
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-4512362-19']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<!--[if lt IE 7]>  <body class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]>     <body class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <body class="ie ie8 lte9 lte8">      <![endif]-->
+<!--[if IE 9]>     <body class="ie ie9 lte9">           <![endif]-->
+<!--[if gt IE 9]>  <body class="ie">                    <![endif]-->
+<!--[if !IE]><!--> <body>                               <!--<![endif]-->
+<a href="https://github.com/vdw/HideSeek"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<div id="wrapper">
+
+<!-- 	<div class="top_bar">
+		Tabslet
+	</div> -->
+	<!-- HEADER -->
+	<div id="header_wrapper">
+		<header>
+			<h1>HideSeek</h1>
+			<h2>A simple, yet customizable live search jQuery plugin</h2>
+			<a class="button" href="https://github.com/vdw/HideSeek/archive/master.zip">download</a>
+			<a class="link" href="https://github.com/vdw/HideSeek">or view on GitHub</a>
+		</header>
+	</div>
+	<!-- HEADER ends -->
+
+	<!-- MAIN CONTAINER -->
+	<div id="body_wrapper">
+		<!-- <h3>About</h3> -->
+		<section id="body" role="main">
+			<article>
+				<h2>
+					HideSeek is yet another jQuery plugin for tabs, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2. and
+					supports <a class="anchorLink" href="#custom_event">custom events</a>, <a class="anchorLink" href="#rotation">rotation</a> and <a class="anchorLink" href="#animation">animation</a></h2>
+			</article>
+		</section>
+		<h3>Demonstration</h3>
+		<!-- CONTENT -->
+		<section>
+			<!-- CONTENT BLOCK -->
+			<article>
+				<div class="column">
+				<h2>Default usage</h2>
+<pre data-language="javascript">
+$('#search-1').hideseek();
+</pre>
+				</div>
+				<div class="column">
+				<label for="search">Programming Language Popularity</label>
+				<input id="search" name="search" placeholder="Start typing here" type="text" data-list=".default_list" data-nodata="No results found">
+				<ul class="vertical default_list">
+					<li>C</li>
+					<li>Java</li>
+					<li>PHP</li>
+					<li>JavaScript</li>
+					<li>C++</li>
+					<li>Python</li>
+					<li>Shell</li>
+					<li>Ruby</li>
+					<li>Objective C</li>
+					<li>C#</li>
+				</ul>
+				</div>
+				<div class="clear"></div>
+			</article>
+			<article>
+				<div class="column">
+				<h2>Highlight</h2>
+<pre data-language="javascript">
+$('#search-highlight').hideseek({
+	highlight: true
+});
+</pre>
+				</div>
+				<div class="column">
+				<label for="search-highlight">Browser Statistics and Trends</label>
+				<input id="search-highlight" name="search-highlight" placeholder="Start typing here" type="text" data-list=".highlight_list" data-nodata="No results found">
+				<ul class="vertical highlight_list">
+					<li>Chrome</li>
+					<li>Firefox</li>
+					<li>Internet Explorer</li>
+					<li>Safari</li>
+					<li>Opera</li>
+				</ul>
+				</div>
+				<div class="clear"></div>
+			</article>
+		</section>
+		<!-- CONTENT ends-->
+		<h3>Use of data attribute to load</h3>
+		<section>
+			<!-- CONTENT BLOCK -->
+			<article>
+				<div class="column">
+				<h2>The attribute "data-toggle"</h2>
+<pre data-language="javascript">
+<input data-toggle="hideseek">
+</pre>
+				</div>
+				<div class="column">
+				<label for="search">Programming Language Popularity</label>
+				<input id="search" name="search" placeholder="Start typing here" type="text" data-toggle="hideseek" data-list=".default_list" data-nodata="No results found">
+				<ul class="vertical default_list">
+					<li>C</li>
+					<li>Java</li>
+					<li>PHP</li>
+					<li>JavaScript</li>
+					<li>C++</li>
+					<li>Python</li>
+					<li>Shell</li>
+					<li>Ruby</li>
+					<li>Objective C</li>
+					<li>C#</li>
+				</ul>
+				</div>
+				<div class="clear"></div>
+			</article>
+		</section>
+	</div>
+	<!-- MAIN CONTAINER ends -->
+
+	<!-- FOOTER -->
+	<footer>
+		<!-- FOOTER CONTAINER-->
+		<div class="footer_wrapper">
+			<p>Built by <a href="https://github.com/vdw">vdw</a> aka <a href="http://gr.linkedin.com/in/dkrestos/" target="_blank">Dimitris Krestos</a></p><p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a></p>
+		</div>
+		<!-- FOOTER CONTAINER ends -->
+	</footer>
+
+</div>
+
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.8.1.min.js"><\/script>')</script>
+
+	<!-- JS -->
+	<script type="text/javascript" src="javascripts/vendor/waypoints.min.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/waypoints-sticky.min.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/jquery.hideseek.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/rainbow-custom.min.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/jquery.anchor.js"></script>
+	<script src="javascripts/initializers.js"></script>
+	<!-- JS ends -->
+
+</body>
+</html>
