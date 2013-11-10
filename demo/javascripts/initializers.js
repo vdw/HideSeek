@@ -9,4 +9,8 @@ $(document).ready(function() {
 		highlight: true
 	});
 
+  $('#search-nodata').hideseek({
+    nodata: 'No results found'
+  });
+
 });

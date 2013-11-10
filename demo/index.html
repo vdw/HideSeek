@@ -60,7 +60,7 @@
 			<article>
 				<h2>
 					HideSeek is yet another jQuery plugin for tabs, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2. and
-					supports <a class="anchorLink" href="#custom_event">custom events</a>, <a class="anchorLink" href="#rotation">rotation</a> and <a class="anchorLink" href="#animation">animation</a></h2>
+					supports <a class="anchorLink" href="#highlight">highlighting</a>, <a class="anchorLink" href="#nodata">custom message</a> and <a class="anchorLink" href="#attribute">initialization via data attribute</a>.</h2>
 			</article>
 		</section>
 		<h3>Demonstration</h3>
@@ -76,7 +76,7 @@ $('#search-1').hideseek();
 				</div>
 				<div class="column">
 				<label for="search">Programming Language Popularity</label>
-				<input id="search" name="search" placeholder="Start typing here" type="text" data-list=".default_list" data-nodata="No results found">
+				<input id="search" name="search" placeholder="Start typing here" type="text" data-list=".default_list">
 				<ul class="vertical default_list">
 					<li>C</li>
 					<li>Java</li>
@@ -92,7 +92,7 @@ $('#search-1').hideseek();
 				</div>
 				<div class="clear"></div>
 			</article>
-			<article>
+			<article id="highlight">
 				<div class="column">
 				<h2>Highlight</h2>
 <pre data-language="javascript">
@@ -103,7 +103,7 @@ $('#search-highlight').hideseek({
 				</div>
 				<div class="column">
 				<label for="search-highlight">Browser Statistics and Trends</label>
-				<input id="search-highlight" name="search-highlight" placeholder="Start typing here" type="text" data-list=".highlight_list" data-nodata="No results found">
+				<input id="search-highlight" name="search-highlight" placeholder="Start typing here" type="text" data-list=".highlight_list">
 				<ul class="vertical highlight_list">
 					<li>Chrome</li>
 					<li>Firefox</li>
@@ -114,12 +114,37 @@ $('#search-highlight').hideseek({
 				</div>
 				<div class="clear"></div>
 			</article>
+			<article id="nodata">
+				<div class="column">
+				<h2>No results message</h2>
+<pre data-language="javascript">
+$('#search-nodata').hideseek({
+	nodata: 'No results found'
+});
+</pre>
+				</div>
+				<div class="column">
+				<label for="search-nodata">Top Greatest Movies of All Time</label>
+				<input id="search-nodata" name="search-nodata" placeholder="Start typing here" type="text" data-list=".nodata_list">
+				<ul class="vertical nodata_list">
+					<li>The Godfather</li>
+					<li>Schindler's List</li>
+					<li>Raging Bull</li>
+					<li>The Shawshank Redemption</li>
+					<li>Casablanca</li>
+					<li>One Flew Over the Cuckoo's Nest</li>
+					<li>Gone with the Wind</li>
+					<li>Citizen Kane</li>
+				</ul>
+				</div>
+				<div class="clear"></div>
+			</article>
 		</section>
 		<!-- CONTENT ends-->
 		<h3>Use of data attribute to load</h3>
 		<section>
 			<!-- CONTENT BLOCK -->
-			<article>
+			<article id="attribute">
 				<div class="column">
 				<h2>The attribute "data-toggle"</h2>
 <pre data-language="javascript">
@@ -127,19 +152,19 @@ $('#search-highlight').hideseek({
 </pre>
 				</div>
 				<div class="column">
-				<label for="search">Programming Language Popularity</label>
+				<label for="search">Top 10 Front-End Development Frameworks</label>
 				<input id="search" name="search" placeholder="Start typing here" type="text" data-toggle="hideseek" data-list=".default_list" data-nodata="No results found">
 				<ul class="vertical default_list">
-					<li>C</li>
-					<li>Java</li>
-					<li>PHP</li>
-					<li>JavaScript</li>
-					<li>C++</li>
-					<li>Python</li>
-					<li>Shell</li>
-					<li>Ruby</li>
-					<li>Objective C</li>
-					<li>C#</li>
+					<li>Bootstrap</li>
+					<li>Fbootstrapp</li>
+					<li>BootMetro</li>
+					<li>Kickstrap</li>
+					<li>Foundation</li>
+					<li>GroundworkCSS</li>
+					<li>Gumby</li>
+					<li>HTML KickStart</li>
+					<li>IVORY</li>
+					<li>Kube</li>
 				</ul>
 				</div>
 				<div class="clear"></div>
@@ -152,7 +177,7 @@ $('#search-highlight').hideseek({
 	<footer>
 		<!-- FOOTER CONTAINER-->
 		<div class="footer_wrapper">
-			<p>Built by <a href="https://github.com/vdw">vdw</a> aka <a href="http://gr.linkedin.com/in/dkrestos/" target="_blank">Dimitris Krestos</a></p><p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a></p>
+			<p>Built by <a href="https://github.com/vdw">vdw</a> aka <a href="http://gr.linkedin.com/in/dkrestos/" target="_blank">Dimitris Krestos</a><br />Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a></p>
 		</div>
 		<!-- FOOTER CONTAINER ends -->
 	</footer>
