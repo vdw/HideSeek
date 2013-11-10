@@ -1,0 +1,75 @@
+/**
+ * BlankPlate | Yet another HTML5 Starter Kit
+ *
+ * BlankPlate Inputs stylesheet
+ *
+ * Normally you don't have to make any changes in this file.
+ * Your changes should be placed in styles.css file.
+ *
+ * @copyright	Copyright 2012, Dimitris Krestos
+ * @license		Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
+ * @link		http://vdw.staytuned.gr/html5-starter-kit-blankplate/
+ * @package		BlankPlate
+ * @version		v1.3.2
+ */
+
+/**
+ * INPUTS
+ * Basic rules for inputs, textareas and selects
+ * -------------------------------------------------------------------------------------------------
+ */
+INPUT, TEXTAREA, SELECT {
+	background-color: #FFF;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	display: inline-block;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	margin-bottom: 10px
+}
+
+INPUT[type="radio"] {
+	cursor: pointer
+}
+
+SELECT, INPUT[type="file"] {
+	height: 2.154em !important;
+	padding: 0.308em !important
+}
+
+INPUT[type="text"], INPUT[type="email"], INPUT[type="password"], TEXTAREA, LABEL {
+	padding: 0.308em
+}
+
+INPUT:focus, TEXTAREA:focus {
+	border-color: #C6C6C6;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	outline: 0 none
+}
+
+INPUT, TEXTAREA {
+	-webkit-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; /* Saf3.2+, Chrome */
+	   -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; /* FF4+ */
+			-ms-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; /* IE10? */
+		 	 -o-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; /* Opera 10.5+ */
+					transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+
+SELECT {
+	background-color: #FFF
+}
+
+OPTION {
+	padding: 0 0.615em
+}
+
+LABEL {
+	display: block;
+	line-height: 1.385em
+}
+
+LABEL.inline {
+	display: inline-block;
+	line-height: 1.385em;
+	margin-bottom: 0.769em
+}

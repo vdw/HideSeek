@@ -1,0 +1,253 @@
+/**
+ * BlankPlate | Yet another HTML5 Starter Kit
+ *
+ * BlankPlate Main stylesheet
+ *
+ * @copyright	Copyright 2012, Dimitris Krestos
+ * @license		Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
+ * @link		http://vdw.staytuned.gr/html5-starter-kit-blankplate/
+ * @package		BlankPlate
+ * @version		v1.2.3
+ */
+
+/**
+ * WORLD
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+BODY {
+
+	font-size: 13px; /* Override typography */
+	font-family: "Open Sans", helvetica, arial, sans-serif;
+}
+
+#wrapper {
+	/*margin: 0 auto;*/
+	/*max-width: 960px;*/
+	width: 100%;
+}
+
+H2 {
+	font-weight: 300;
+}
+
+UL, LI {
+	color: #c6c6c6;
+	font-size: 15px;
+	line-height: 24px !important;
+}
+
+INPUT[type="text"] {
+	background: #F1F1F1;
+	border: 0;
+	border-bottom: 1px solid #c6c6c6;
+	margin-bottom: 10px;
+	padding: 10px 0 10px 10px;
+	width: 100%;
+}
+
+/* Clear fix */
+.clear {
+	clear: both;
+	float: none;
+	font-size: 1px;
+	height: 0px;
+	line-height: 0
+}
+
+/**
+ * HEADER
+ * Your header rules
+ * -------------------------------------------------------------------------------------------------
+ */
+.top_bar {
+	background: white;
+	border-bottom: 1px solid #E5E5E5;
+	color: #888;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 80px;
+	letter-spacing: 2px;
+	width: 100%;
+}
+
+#header_wrapper {
+	background: #3A3E3D;
+	width: 100%;
+}
+
+HEADER {
+	color: white;
+	height: 400px;
+	margin: 0 auto;
+	max-width: 940px;
+}
+
+HEADER H1 {
+	color: inherit;
+	font-size: 48px;
+	letter-spacing: 4px;
+	line-height: 78px;
+	padding-top: 120px;
+	text-transform: uppercase;
+}
+
+HEADER H2 {
+	color: inherit;
+	font-size: 18px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+}
+
+/**
+ * BODY
+ * Your content rules
+ * -------------------------------------------------------------------------------------------------
+ */
+#body_wrapper {
+	background: white;
+	width: 100%;
+}
+
+#body_wrapper H3 {
+	background: white;
+	border-bottom: 1px solid #E5E5E5;
+	color: #888;
+	font-size: 16px;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 80px;
+	letter-spacing: 2px;
+	width: 100%;
+}
+
+SECTION#body {
+	background: #f5a732;
+}
+
+SECTION#body H2 {
+	color: white;
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 34px;
+}
+
+SECTION {
+	background: #F1F1F1;
+	/*margin-top: 80px;*/
+	width: 100%;
+}
+
+.stuck {
+	position: fixed;
+	top: 0;
+}
+
+ARTICLE {
+	margin: 0 auto;
+	padding: 30px 0 20px;
+	max-width: 940px;
+}
+
+ARTICLE UL {
+	list-style: none;
+}
+
+ARTICLE H2 {
+	color: #E95855;
+	margin-bottom: 10px;
+}
+
+ARTICLE LABEL {
+	background: #F5A732;
+	color: white;
+	display: block;
+	font-size: 16px;
+	font-weight: 100;
+	line-height: 20px;
+	padding: 10px 0 10px 10px;
+	width: 100%;
+}
+
+PRE {
+	width: 400px;
+}
+
+/**
+ * FOOTER
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+FOOTER {
+	width: 100%
+}
+
+.footer_wrapper {
+	color: #888;
+	margin: 20px auto;
+	width: 940px;
+}
+
+/**
+ * SEARCH
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+.column {
+	float: left;
+	width: 50%;
+}
+
+
+.button {
+	background: #f5a732;
+	border-bottom: 4px solid #cd8722;
+	color: #FFFFFF;
+	display: block;
+	float: left;
+	font-size: 14px;
+	letter-spacing: 2px;
+	margin-top: 20px;
+	margin-right: 26px;
+	padding: 15px 20px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 150px;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+
+.button:hover {
+	background: #f4ac40;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.link {
+	color: white;
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 48px;
+	margin-top: 20px;
+	text-decoration: none;
+}
+
+.link:hover {
+	text-decoration: underline;
+}
+
+.anchorLink {
+	border-bottom: 1px dashed white;
+}
+
+.anchorLink:hover {
+	text-decoration: none;
+}
