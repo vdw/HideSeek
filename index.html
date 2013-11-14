@@ -57,8 +57,8 @@
 		<section id="body" role="main">
 			<article>
 				<h2>
-					HideSeek is simple, yet customizable jQuery plugin for for live search, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2. and
-					supports <a class="anchorLink" href="#highlight">highlighting</a>, <a class="anchorLink" href="#nodata">custom message</a> and <a class="anchorLink" href="#attribute">initialization via data attribute</a>.</h2>
+					HideSeek is simple, yet customizable jQuery plugin for live search, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2. and
+					supports <a class="anchorLink" href="#highlight">highlighting</a>, <a class="anchorLink" href="#nodata">custom message</a>, <a class="anchorLink" href="#attribute">initialization via data attribute</a> and <a class="anchorLink" href="#custom_event">custom events</a>.</h2>
 			</article>
 		</section>
 		<h3>Demonstration</h3>
@@ -138,6 +138,59 @@ $('#search-nodata').hideseek({
 				<div class="clear"></div>
 			</article>
 		</section>
+		<h3 id="custom_event">Custom Events</h3>
+		<section>
+			<!-- CONTENT BLOCK -->
+			<article>
+				<div class="column">
+				<h2>Custom event "_after"</h2>
+<pre data-language="javascript">
+$('.after_event').hideseek();
+$('.after_event').on("_after", function() {
+  alert('This alert comes after the search is finished!')
+});
+</pre>
+				</div>
+				<div class="column">
+				<label for="search">Top 10 Countries That Offer Mail-Order Brides</label>
+				<input id="search-custom-event" name="search" placeholder="Start typing here" type="text" data-list=".custom_event_list" data-nodata="No results found">
+				<ul class="vertical custom_event_list">
+					<li>Russia</li>
+					<li>The Philippines</li>
+					<li>Colombia</li>
+					<li>Dominican Republic</li>
+					<li>Ukraine</li>
+					<li>Thailand</li>
+					<li>India</li>
+					<li>China</li>
+					<li>Brazil</li>
+					<li>Vietnam</li>
+				</ul>
+				</div>
+				<div class="clear"></div>
+			</article>
+			<article>
+				<div class="column">
+				<h2>Custom event "_after_each"</h2>
+<pre data-language="javascript">
+$('.after_each_event').hideseek();
+$('.after_each_event').on("_after_each", function() {
+  alert('This alert comes after the procession of each element!')
+});
+</pre>
+				</div>
+				<div class="column">
+				<label for="search">Top 10 Crazy Structures Made With Legos</label>
+				<input id="search-custom-event-2" name="search" placeholder="Start typing here" type="text" data-list=".custom_event_2_list" data-nodata="No results found">
+				<ul class="vertical custom_event_2_list">
+					<li>House made from Lego’s</li>
+					<li>Gigantic Aircraft Carrier model</li>
+					<li>Enormous replica of A380 Airbus</li>
+				</ul>
+				</div>
+				<div class="clear"></div>
+			</article>
+		</section>
 		<!-- CONTENT ends-->
 		<h3>Use of data attribute to load</h3>
 		<section>
@@ -189,7 +242,7 @@ $('#search-nodata').hideseek({
 	<!-- JS -->
 	<script type="text/javascript" src="javascripts/vendor/waypoints.min.js"></script>
 	<script type="text/javascript" src="javascripts/vendor/waypoints-sticky.min.js"></script>
-	<script type="text/javascript" src="javascripts/vendor/jquery.hideseek.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/jquery.hideseek.min.js"></script>
 	<script type="text/javascript" src="javascripts/vendor/rainbow-custom.min.js"></script>
 	<script type="text/javascript" src="javascripts/vendor/jquery.anchor.js"></script>
 	<script src="javascripts/initializers.js"></script>
