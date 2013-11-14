@@ -13,4 +13,14 @@ $(document).ready(function() {
     nodata: 'No results found'
   });
 
+  $('#search-custom-event').hideseek();
+  $('#search-custom-event').on("_after", function() {
+    alert('This alert comes after the search!')
+  });
+
+  $('#search-custom-event-2').hideseek();
+  $('#search-custom-event-2').on("_after", function() {
+    alert('This alert comes after the procession of each element!')
+  });
+
 });

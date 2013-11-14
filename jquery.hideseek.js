@@ -54,9 +54,13 @@
 
             $(this).hide();
 
+            $this.trigger('_after_each');
+
           } else {
 
             options.highlight ? $(this).removeHighlight().highlight(q).show() : $(this).show();
+
+            $this.trigger('_after_each');
 
           }
 
@@ -69,11 +73,13 @@
 
           if ($list.children(':not([style*="display: none"])').length == 0) {
 
-            $list.children().first().clone().addClass('no-results').show().prependTo(options.list).text(options.nodata);
+            $list.children().first().clone().removeHighlight().addClass('no-results').show().prependTo(options.list).text(options.nodata);
 
           }
 
         }
+
+        $this.trigger('_after');
 
       });
 

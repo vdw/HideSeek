@@ -8,6 +8,7 @@ A simple, yet customizable live search jQuery plugin
 
 * Search in text or title/alt attribute
 * Highlight
+* Custom events
 * Custom messages
 
 ## Compatibility
