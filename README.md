@@ -1,6 +1,6 @@
 # HideSeek
 
-A simple, yet customizable live search jQuery plugin
+A simple, yet customizable quick/live search jQuery plugin
 
 * [Demonstration page][1]
 
