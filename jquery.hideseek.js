@@ -13,7 +13,7 @@
 
   /* Sample html structure
 
-  <div class='selector'></div>
+  -
 
   */
 
@@ -71,9 +71,17 @@
 
           $list.find('.no-results').remove();
 
-          if ($list.children(':not([style*="display: none"])').length == 0) {
+          if (!$list.children(':not([style*="display: none"])').length) {
 
-            $list.children().first().clone().removeHighlight().addClass('no-results').show().prependTo(options.list).text(options.nodata);
+            $list
+              .children()
+              .first()
+              .clone()
+              .removeHighlight()
+              .addClass('no-results')
+              .show()
+              .prependTo(options.list)
+              .text(options.nodata);
 
           }
 
