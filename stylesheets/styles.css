@@ -37,6 +37,10 @@ UL, LI {
 	line-height: 24px !important;
 }
 
+LI A {
+	color: inherit;
+}
+
 INPUT[type="text"] {
 	background: #F1F1F1;
 	border: 0;
@@ -255,4 +259,9 @@ FOOTER {
 .screenshot {
 	position: absolute;
 	clip: rect(0 0 0 0);
+}
+
+.selected {
+	background: white;
+	padding: 2px 8px;
 }
