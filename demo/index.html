@@ -124,6 +124,35 @@ $('#search-nodata').hideseek({
 				</div>
 				<div class="clear"></div>
 			</article>
+			<!-- CONTENT BLOCK -->
+			<article>
+				<div class="column">
+				<h2>Navigation</h2>
+<pre data-language="javascript">
+$('.after_event').hideseek();
+$('.after_event').on("_after", function() {
+  alert('This alert comes after the search is finished!')
+});
+</pre>
+				</div>
+				<div class="column">
+				<label for="search">Top 10 Most Popular Frameworks</label>
+				<input id="navigation" name="search" placeholder="Start typing here" type="text" data-list=".navigation_list" data-nodata="No results found">
+				<ul class="vertical navigation_list">
+					<li><a href="http://www.asp.net/">ASP.NET</a></li>
+					<li><a href="http://flask.pocoo.org/">Flask</a></li>
+					<li><a href="http://codeigniter.com/">CodeIgniter</a></li>
+					<li><a href="http://framework.zend.com/">Zend</a></li>
+					<li><a href="http://rubyonrails.org/">Ruby on Rails</a></li>
+					<li><a href="http://angularjs.org/">AngularJS</a></li>
+					<li><a href="http://www.djangoproject.com/">Django</a></li>
+					<li><a href="http://www.yiiframework.com/">Yii</a></li>
+					<li><a href="http://symfony.com/">Symfony</a></li>
+					<li><a href="http://cakephp.org/">CakePHP</a></li>
+				</ul>
+				</div>
+				<div class="clear"></div>
+			</article>
 		</section>
 		<h3 id="custom_event">Custom Events</h3>
 		<section>
@@ -191,8 +220,8 @@ $('.after_each_event').on("_after_each", function() {
 				</div>
 				<div class="column">
 				<label for="search">Top 10 Front-End Development Frameworks</label>
-				<input id="search" name="search" placeholder="Start typing here" type="text" data-toggle="hideseek" data-list=".default_list" data-nodata="No results found">
-				<ul class="vertical default_list">
+				<input id="search" name="search" placeholder="Start typing here" type="text" data-toggle="hideseek" data-list=".default_list_data" data-nodata="No results found">
+				<ul class="vertical default_list_data">
 					<li>Bootstrap</li>
 					<li>Fbootstrapp</li>
 					<li>BootMetro</li>
@@ -229,7 +258,7 @@ $('.after_each_event').on("_after_each", function() {
 	<!-- JS -->
 	<script type="text/javascript" src="javascripts/vendor/waypoints.min.js"></script>
 	<script type="text/javascript" src="javascripts/vendor/waypoints-sticky.min.js"></script>
-	<script type="text/javascript" src="javascripts/vendor/jquery.hideseek.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/jquery.hideseek.min.js"></script>
 	<script type="text/javascript" src="javascripts/vendor/rainbow-custom.min.js"></script>
 	<script type="text/javascript" src="javascripts/vendor/jquery.anchor.js"></script>
 	<script src="javascripts/initializers.js"></script>

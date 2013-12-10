@@ -13,6 +13,11 @@ $(document).ready(function() {
     nodata: 'No results found'
   });
 
+  $('#navigation').hideseek({
+    nodata: 'No results found',
+    navigation: true
+  });
+
   $('#search-custom-event').hideseek();
   $('#search-custom-event').on("_after", function() {
     alert('This alert comes after the search!')

@@ -26,7 +26,8 @@
       list:       '.hideseek-data',
       nodata:     '',
       attribute:  'text',
-      highlight:  false
+      highlight:  false,
+      navigation: false
     };
 
     var options = $.extend(defaults, options);
@@ -35,59 +36,124 @@
 
       var $this = $(this);
 
-      $this.keyup(function() {
+      // Ungly overwrite
+      options.list      = $(this).data('list') || options.list;
+      options.nodata    = $(this).data('nodata') || options.nodata;
+      options.attribute = $(this).data('attribute') || options.attribute;
 
-        // Ungly overwrite
-        options.list      = $(this).data('list') || options.list;
-        options.nodata    = $(this).data('nodata') || options.nodata;
-        options.attribute = $(this).data('attribute') || options.attribute;
+      var $list = $(options.list);
 
-        var q = $this.val().toLowerCase();
+      if (options.navigation) $this.attr('autocomplete', 'off');
 
-        var $list = $(options.list);
+      $this.keyup(function(e) {
 
-        $list.children().each(function() {
+        if (e.keyCode != 38 && e.keyCode != 40 && e.keyCode != 13) {
 
-          var data = (options.attribute != 'text') ? $(this).attr(options.attribute).toLowerCase() : $(this).text().toLowerCase();
+          var q = $this.val().toLowerCase();
 
-          if (data.indexOf(q) == -1) {
+          $list.children().removeClass('selected').each(function() {
 
-            $(this).hide();
+            var data = (options.attribute != 'text') ? $(this).attr(options.attribute).toLowerCase() : $(this).text().toLowerCase();
 
-            $this.trigger('_after_each');
+            if (data.indexOf(q) == -1) {
 
-          } else {
+              $(this).hide();
 
-            options.highlight ? $(this).removeHighlight().highlight(q).show() : $(this).show();
+              $this.trigger('_after_each');
 
-            $this.trigger('_after_each');
+            } else {
+
+              options.highlight ? $(this).removeHighlight().highlight(q).show() : $(this).show();
+
+              $this.trigger('_after_each');
+
+            }
+
+          });
+
+          // No results message
+          if (options.nodata) {
+
+            $list.find('.no-results').remove();
+
+            if (!$list.children(':not([style*="display: none"])').length) {
+
+              $list
+                .children()
+                .first()
+                .clone()
+                .removeHighlight()
+                .addClass('no-results')
+                .show()
+                .prependTo(options.list)
+                .text(options.nodata);
+
+            }
 
           }
 
-        });
+          $this.trigger('_after');
 
-        // No results message
-        if (options.nodata) {
+        };
 
-          $list.find('.no-results').remove();
+        // Navigation
+        function current(element) {
+          return element.children('.selected:visible');
+        };
 
-          if (!$list.children(':not([style*="display: none"])').length) {
+        function prev(element) {
+          return current(element).prevAll(":visible:first");
+        };
 
-            $list
-              .children()
-              .first()
-              .clone()
-              .removeHighlight()
-              .addClass('no-results')
-              .show()
-              .prependTo(options.list)
-              .text(options.nodata);
+        function next(element) {
+          return current(element).nextAll(":visible:first");
+        };
 
-          }
+        if (options.navigation) {
 
-        }
+          if (e.keyCode == 38) {
 
-        $this.trigger('_after');
+            if (current($list).length) {
+
+              prev($list).addClass('selected');
+
+              current($list).last().removeClass('selected');
+
+            } else {
+
+              $list.children(':visible').last().addClass('selected');
+
+            };
+
+          } else if (e.keyCode == 40) {
+
+            if (current($list).length) {
+
+              next($list).addClass('selected');
+
+              current($list).first().removeClass('selected');
+
+            } else {
+
+              $list.children(':visible').first().addClass('selected');
+
+            };
+
+          } else if (e.keyCode == 13) {
+
+            if (current($list).find('a').length) {
+
+              document.location = current($list).find('a').attr('href');
+
+            } else {
+
+              $this.val(current($list).text());
+
+            };
+
+          };
+
+        };
 
       });
 
