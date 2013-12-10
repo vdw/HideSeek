@@ -137,6 +137,34 @@ $('#search-nodata').hideseek({
 				</div>
 				<div class="clear"></div>
 			</article>
+			<article>
+				<div class="column">
+				<h2>Navigation</h2>
+<pre data-language="javascript">
+$('#navigation').hideseek({
+	nodata: 'No results found',
+	navigation: true
+});
+</pre>
+				</div>
+				<div class="column">
+				<label for="search">Top 10 Most Popular Frameworks</label>
+				<input id="navigation" name="search" placeholder="Start typing here" type="text" data-list=".navigation_list" data-nodata="No results found">
+				<ul class="vertical navigation_list">
+					<li><a href="http://www.asp.net/">ASP.NET</a></li>
+					<li><a href="http://flask.pocoo.org/">Flask</a></li>
+					<li><a href="http://codeigniter.com/">CodeIgniter</a></li>
+					<li><a href="http://framework.zend.com/">Zend</a></li>
+					<li><a href="http://rubyonrails.org/">Ruby on Rails</a></li>
+					<li><a href="http://angularjs.org/">AngularJS</a></li>
+					<li><a href="http://www.djangoproject.com/">Django</a></li>
+					<li><a href="http://www.yiiframework.com/">Yii</a></li>
+					<li><a href="http://symfony.com/">Symfony</a></li>
+					<li><a href="http://cakephp.org/">CakePHP</a></li>
+				</ul>
+				</div>
+				<div class="clear"></div>
+			</article>
 		</section>
 		<h3 id="custom_event">Custom Events</h3>
 		<section>
