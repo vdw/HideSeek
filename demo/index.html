@@ -45,7 +45,7 @@
 			<article>
 				<h2>
 					HideSeek is simple, yet customizable jQuery plugin for live search, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2. and
-					supports <a class="anchorLink" href="#highlight">highlighting</a>, <a class="anchorLink" href="#nodata">custom message</a>, <a class="anchorLink" href="#attribute">initialization via data attribute</a> and <a class="anchorLink" href="#custom_event">custom events</a>.</h2>
+					supports <a class="anchorLink" href="#highlight">highlighting</a>, <a class="anchorLink" href="#nodata">custom message</a>, <a class="anchorLink" href="#navigation">navigation</a>, <a class="anchorLink" href="#attribute">initialization via data attribute</a> and <a class="anchorLink" href="#custom_event">custom events</a>.</h2>
 			</article>
 		</section>
 		<h3>Demonstration</h3>
@@ -125,11 +125,11 @@ $('#search-nodata').hideseek({
 				<div class="clear"></div>
 			</article>
 			<!-- CONTENT BLOCK -->
-			<article>
+			<article id="navigation">
 				<div class="column">
 				<h2>Navigation</h2>
 <pre data-language="javascript">
-$('#navigation').hideseek({
+$('#search-navigation').hideseek({
 	nodata: 'No results found',
 	navigation: true
 });
@@ -137,7 +137,7 @@ $('#navigation').hideseek({
 				</div>
 				<div class="column">
 				<label for="search">Top 10 Most Popular Frameworks</label>
-				<input id="navigation" name="search" placeholder="Start typing here" type="text" data-list=".navigation_list" data-nodata="No results found">
+				<input id="search-navigation" name="search" placeholder="Start typing here" type="text" data-list=".navigation_list" data-nodata="No results found">
 				<ul class="vertical navigation_list">
 					<li><a href="http://www.asp.net/">ASP.NET</a></li>
 					<li><a href="http://flask.pocoo.org/">Flask</a></li>

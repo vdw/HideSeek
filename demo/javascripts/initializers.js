@@ -13,7 +13,7 @@ $(document).ready(function() {
     nodata: 'No results found'
   });
 
-  $('#navigation').hideseek({
+  $('#search-navigation').hideseek({
     nodata: 'No results found',
     navigation: true
   });
