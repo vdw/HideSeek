@@ -3,6 +3,7 @@
 A simple, yet customizable quick/live search jQuery plugin
 
 * [Demonstration page][1]
+* [Documentation (wiki)][3]
 
 ## Features
 
@@ -35,3 +36,4 @@ limitations under the License.
 
   [1]: http://vdw.github.io/HideSeek/
   [2]: http://www.apache.org/licenses/LICENSE-2.0
+  [3]: https://github.com/vdw/HideSeek/wiki
