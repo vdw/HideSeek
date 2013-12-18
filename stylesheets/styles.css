@@ -256,11 +256,6 @@ FOOTER {
 	text-decoration: none;
 }
 
-.screenshot {
-	position: absolute;
-	clip: rect(0 0 0 0);
-}
-
 .selected {
 	background: white;
 	padding: 2px 8px;
