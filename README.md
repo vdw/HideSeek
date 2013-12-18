@@ -41,3 +41,5 @@ limitations under the License.
   [1]: http://vdw.github.io/HideSeek/
   [2]: http://www.apache.org/licenses/LICENSE-2.0
   [3]: https://github.com/vdw/HideSeek/wiki
+  [4]: http://stevy.gr/
+  [5]: http://prince.gr/
