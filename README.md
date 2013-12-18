@@ -18,6 +18,10 @@ A simple, yet customizable quick/live search jQuery plugin
 Compatible with IE7+, Chrome, Firefox, Safari
 and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2.
 
+## Credits
+[Stevy][4] for the logo designs and support.
+[Prince][5] for his support and ideas.
+
 ## Copyright and license
 
 Copyright 2013 Dimitris Krestos
