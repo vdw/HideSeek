@@ -265,3 +265,9 @@ FOOTER {
 	background: white;
 	padding: 2px 8px;
 }
+
+.logo {
+	margin-top: -6px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
