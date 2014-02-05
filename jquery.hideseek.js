@@ -56,6 +56,7 @@
       options.list      = $(this).data('list') || options.list;
       options.nodata    = $(this).data('nodata') || options.nodata;
       options.attribute = $(this).data('attribute') || options.attribute;
+      options.highlight = $(this).data('highlight') || options.highlight;
 
       var $list = $(options.list);
 
