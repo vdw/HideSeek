@@ -61,7 +61,7 @@
 		<section id="body" role="main">
 			<article>
 				<h2>
-					HideSeek is simple, yet customizable jQuery plugin for live search, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2. and
+					HideSeek is simple, yet customizable jQuery plugin for live search, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.11.0, 2.1.0. and
 					supports <a class="anchorLink" href="#highlight">highlighting</a>, <a class="anchorLink" href="#nodata">custom message</a>, <a class="anchorLink" href="#navigation">navigation</a>, <a class="anchorLink" href="#attribute">initialization via data attribute</a> and <a class="anchorLink" href="#custom_event">custom events</a>.</h2>
 			</article>
 		</section>
@@ -78,7 +78,7 @@ $('#search-1').hideseek();
 				</div>
 				<div class="column">
 				<label for="search">Programming Language Popularity</label>
-				<input id="search" name="search" placeholder="Start typing here" type="text" data-list=".default_list">
+				<input id="search" name="search" placeholder="Start typing here" type="text" data-list=".default_list" autocomplete="off">
 				<ul class="vertical default_list">
 					<li>C</li>
 					<li>Java</li>
@@ -105,7 +105,7 @@ $('#search-highlight').hideseek({
 				</div>
 				<div class="column">
 				<label for="search-highlight">Browser Statistics and Trends</label>
-				<input id="search-highlight" name="search-highlight" placeholder="Start typing here" type="text" data-list=".highlight_list">
+				<input id="search-highlight" name="search-highlight" placeholder="Start typing here" type="text" data-list=".highlight_list" autocomplete="off">
 				<ul class="vertical highlight_list">
 					<li>Chrome</li>
 					<li>Firefox</li>
@@ -127,7 +127,7 @@ $('#search-nodata').hideseek({
 				</div>
 				<div class="column">
 				<label for="search-nodata">Top Greatest Movies of All Time</label>
-				<input id="search-nodata" name="search-nodata" placeholder="Start typing here" type="text" data-list=".nodata_list">
+				<input id="search-nodata" name="search-nodata" placeholder="Start typing here" type="text" data-list=".nodata_list" autocomplete="off">
 				<ul class="vertical nodata_list">
 					<li>The Godfather</li>
 					<li>Schindler's List</li>
@@ -153,7 +153,7 @@ $('#search-navigation').hideseek({
 				</div>
 				<div class="column">
 				<label for="search">Top 10 Most Popular Frameworks</label>
-				<input id="search-navigation" name="search" placeholder="Start typing here" type="text" data-list=".navigation_list" data-nodata="No results found">
+				<input id="search-navigation" name="search" placeholder="Start typing here" type="text" data-list=".navigation_list" data-nodata="No results found" autocomplete="off">
 				<ul class="vertical navigation_list">
 					<li><a href="http://www.asp.net/">ASP.NET</a></li>
 					<li><a href="http://flask.pocoo.org/">Flask</a></li>
@@ -185,7 +185,7 @@ $('.after_event').on("_after", function() {
 				</div>
 				<div class="column">
 				<label for="search">Top 10 Countries That Offer Mail-Order Brides</label>
-				<input id="search-custom-event" name="search" placeholder="Start typing here" type="text" data-list=".custom_event_list" data-nodata="No results found">
+				<input id="search-custom-event" name="search" placeholder="Start typing here" type="text" data-list=".custom_event_list" data-nodata="No results found" autocomplete="off">
 				<ul class="vertical custom_event_list">
 					<li>Russia</li>
 					<li>The Philippines</li>
@@ -213,7 +213,7 @@ $('.after_each_event').on("_after_each", function() {
 				</div>
 				<div class="column">
 				<label for="search">Top 10 Crazy Structures Made With Legos</label>
-				<input id="search-custom-event-2" name="search" placeholder="Start typing here" type="text" data-list=".custom_event_2_list" data-nodata="No results found">
+				<input id="search-custom-event-2" name="search" placeholder="Start typing here" type="text" data-list=".custom_event_2_list" data-nodata="No results found" autocomplete="off">
 				<ul class="vertical custom_event_2_list">
 					<li>House made from Lego’s</li>
 					<li>Gigantic Aircraft Carrier model</li>
@@ -236,7 +236,7 @@ $('.after_each_event').on("_after_each", function() {
 				</div>
 				<div class="column">
 				<label for="search">Top 10 Front-End Development Frameworks</label>
-				<input id="search" name="search" placeholder="Start typing here" type="text" data-toggle="hideseek" data-list=".default_list" data-nodata="No results found">
+				<input id="search" name="search" placeholder="Start typing here" type="text" data-toggle="hideseek" data-list=".default_list" data-nodata="No results found" autocomplete="off">
 				<ul class="vertical default_list">
 					<li>Bootstrap</li>
 					<li>Fbootstrapp</li>
