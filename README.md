@@ -16,7 +16,7 @@ A simple, yet customizable quick/live search jQuery plugin
 ## Compatibility
 
 Compatible with IE7+, Chrome, Firefox, Safari
-and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2.
+and jQuery 1.8.1, 1.9.1, 1.11.0, 2.1.0.
 
 ## Credits
 * [Stevy.gr][4]
