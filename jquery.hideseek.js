@@ -48,15 +48,15 @@
 
     var options = $.extend(defaults, options);
 
-    $(this).each(function() {
+    return this.each(function() {
 
       var $this = $(this);
 
       // Ungly overwrite
-      options.list      = $(this).data('list') || options.list;
-      options.nodata    = $(this).data('nodata') || options.nodata;
-      options.attribute = $(this).data('attribute') || options.attribute;
-      options.highlight = $(this).data('highlight') || options.highlight;
+      options.list      = $this.data('list') || options.list;
+      options.nodata    = $this.data('nodata') || options.nodata;
+      options.attribute = $this.data('attribute') || options.attribute;
+      options.highlight = $this.data('highlight') || options.highlight;
 
       var $list = $(options.list);
 
