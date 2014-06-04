@@ -158,6 +158,38 @@ $('#search-navigation').hideseek({
         </div>
         <div class="clear"></div>
       </article>
+
+
+      <article id="navigation">
+        <div class="column">
+        <h2>Ignore</h2>
+<pre data-language="javascript">
+$('#search-ignore').hideseek({
+  highlight: true,
+  ignore: '.ignore'
+});
+</pre>
+        </div>
+        <div class="column">
+        <label for="search">Top 10 Massive Things We Built And Then Destroyed</label>
+        <input id="search-ignore" name="search" placeholder="Start typing here" type="text" data-list=".ignore_list" data-nodata="No results found" autocomplete="off">
+        <ul class="vertical ignore_list">
+          <li>The Great Wheel</li>
+          <li>SS Great Eastern</li>
+          <li>Tsar Tank</li>
+          <li>The Crystal Palace</li>
+          <li class="ignore">Big Muskie (ignored)</li>
+          <li>Schwerer Gustav</li>
+          <li>Moskva Pool</li>
+          <li>The Great Hedge Of India</li>
+          <li>London Underground Aircraft Factory</li>
+          <li>Seawise Giant</li>
+        </ul>
+        </div>
+        <div class="clear"></div>
+      </article>
+
+
     </section>
     <h3 id="custom_event">Custom Events</h3>
     <section>

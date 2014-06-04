@@ -43,6 +43,7 @@
       nodata:     '',
       attribute:  'text',
       highlight:  false,
+      ignore:     '',
       navigation: false
     };
 
@@ -57,6 +58,7 @@
       options.nodata    = $this.data('nodata') || options.nodata;
       options.attribute = $this.data('attribute') || options.attribute;
       options.highlight = $this.data('highlight') || options.highlight;
+      options.ignore    = $this.data('ignore') || options.ignore;
 
       var $list = $(options.list);
 
@@ -68,7 +70,7 @@
 
           var q = $this.val().toLowerCase();
 
-          $list.children().removeClass('selected').each(function() {
+          $list.children(":not(" + options.ignore + ")").removeClass('selected').each(function() {
 
             var data = (options.attribute != 'text') ? $(this).attr(options.attribute).toLowerCase() : $(this).text().toLowerCase();
 
