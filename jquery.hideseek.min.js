@@ -4,7 +4,7 @@
  * @copyright Copyright 2013, Dimitris Krestos
  * @license   Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
  * @link      http://vdw.staytuned.gr
- * @version   v0.5.3
+ * @version   v0.5.4
  *
  * Dependencies are include in minified versions at the bottom:
  * 1. Highlight v4 by Johann Burkard
