@@ -18,6 +18,11 @@ $(document).ready(function() {
     navigation: true
   });
 
+  $('#search-ignore').hideseek({
+    highlight: true,
+    ignore: '.ignore'
+  });
+
   $('#search-custom-event').hideseek();
   $('#search-custom-event').on("_after", function() {
     alert('This alert comes after the search!')
