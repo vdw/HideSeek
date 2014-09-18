@@ -70,7 +70,7 @@
 
           var q = $this.val().toLowerCase();
 
-          $list.children(":not(" + options.ignore + ")").removeClass('selected').each(function() {
+          $list.children(options.ignore.trim() ? ":not(" + options.ignore + ")" : '').removeClass('selected').each(function() {
 
             var data = (options.attribute != 'text') ? $(this).attr(options.attribute).toLowerCase() : $(this).text().toLowerCase();
 
