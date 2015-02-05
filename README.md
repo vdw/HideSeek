@@ -1,5 +1,7 @@
 # HideSeek
 
+[![npm version](https://badge.fury.io/js/hideseek.png)](http://badge.fury.io/js/hideseek)
+
 A simple, yet customizable quick/live search jQuery plugin
 
 * [Demonstration page][1]
