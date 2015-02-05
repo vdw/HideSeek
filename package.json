@@ -1,0 +1,23 @@
+{
+  "name": "hideseek",
+  "version": "0.5.5",
+  "description": "A simple, yet customizable live search jQuery plugin.",
+  "main": "jquery.hideseek.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vdw/HideSeek.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "live",
+    "search",
+    "jquery",
+    "hideseek"
+  ],
+  "author": "Dimitris Krestos <dkrestos@gmail.com>",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/vdw/HideSeek/issues"
+  },
+  "homepage": "https://github.com/vdw/HideSeek"
+}
