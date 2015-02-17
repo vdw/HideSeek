@@ -120,7 +120,7 @@
           // hide headers with no results
           if (options.headers){
             $(options.headers, $list).each(function(){
-              if (!$(this).nextUntil(options.headers).filter(':not([style*="display: none"])').length){
+              if (!$(this).nextUntil(options.headers).not('[style*="display: none"],' + options.ignore).length){
                 $(this).hide();
               }
               else {
