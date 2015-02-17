@@ -44,7 +44,8 @@
       attribute:  'text',
       highlight:  false,
       ignore:     '',
-      navigation: false
+      navigation: false,
+      headers: ''
     };
 
     var options = $.extend(defaults, options);
@@ -59,6 +60,11 @@
       options.attribute = $this.data('attribute') || options.attribute;
       options.highlight = $this.data('highlight') || options.highlight;
       options.ignore    = $this.data('ignore') || options.ignore;
+      options.headers   = $this.data('headers') || options.headers;
+
+      // adds headers to excluded items
+      if (options.headers)
+        options.ignore += options.ignore ? ', ' + options.headers : options.headers;
 
       var $list = $(options.list);
 
@@ -109,6 +115,18 @@
 
             }
 
+          }
+
+          // hide headers with no results
+          if (options.headers){
+            $(options.headers, $list).each(function(){
+              if (!$(this).nextUntil(options.headers).filter(':not([style*="display: none"])').length){
+                $(this).hide();
+              }
+              else {
+                $(this).show();
+              }
+            });
           }
 
           $this.trigger('_after');
