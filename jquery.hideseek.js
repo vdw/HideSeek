@@ -39,12 +39,13 @@
   $.fn.hideseek = function(options) {
 
     var defaults = {
-      list:       '.hideseek-data',
-      nodata:     '',
-      attribute:  'text',
-      highlight:  false,
-      ignore:     '',
-      navigation: false
+      list:           '.hideseek-data',
+      nodata:         '',
+      attribute:      'text',
+      highlight:      false,
+      ignore:         '',
+      navigation:     false,
+      ignore_accents: false
     };
 
     var options = $.extend(defaults, options);
@@ -54,11 +55,12 @@
       var $this = $(this);
 
       // Ungly overwrite
-      options.list      = $this.data('list') || options.list;
-      options.nodata    = $this.data('nodata') || options.nodata;
-      options.attribute = $this.data('attribute') || options.attribute;
-      options.highlight = $this.data('highlight') || options.highlight;
-      options.ignore    = $this.data('ignore') || options.ignore;
+      options.list           = $this.data('list') || options.list;
+      options.nodata         = $this.data('nodata') || options.nodata;
+      options.attribute      = $this.data('attribute') || options.attribute;
+      options.highlight      = $this.data('highlight') || options.highlight;
+      options.ignore         = $this.data('ignore') || options.ignore;
+      options.ignore_accents = $this.data('ignore_accents') || options.ignore_accents;
 
       var $list = $(options.list);
 
@@ -74,7 +76,7 @@
 
             var data = (options.attribute != 'text') ? $(this).attr(options.attribute).toLowerCase() : $(this).text().toLowerCase();
 
-            if (data.indexOf(q) == -1) {
+            if (data.removeAccents(options.ignore_accents).indexOf(q) == -1) {
 
               $(this).hide();
 
@@ -199,4 +201,17 @@ Johann Burkard
 <mailto:jb@eaio.com>
 
 */
-jQuery.fn.highlight=function(t){function e(t,i){var n=0;if(3==t.nodeType){var a=t.data.toUpperCase().indexOf(i);if(a>=0){var s=document.createElement("mark");s.className="highlight";var r=t.splitText(a);r.splitText(i.length);var o=r.cloneNode(!0);s.appendChild(o),r.parentNode.replaceChild(s,r),n=1}}else if(1==t.nodeType&&t.childNodes&&!/(script|style)/i.test(t.tagName))for(var h=0;h<t.childNodes.length;++h)h+=e(t.childNodes[h],i);return n}return this.length&&t&&t.length?this.each(function(){e(this,t.toUpperCase())}):this},jQuery.fn.removeHighlight=function(){return this.find("mark.highlight").each(function(){with(this.parentNode.firstChild.nodeName,this.parentNode)replaceChild(this.firstChild,this),normalize()}).end()};
+jQuery.fn.highlight=function(t){function e(t,i){var n=0;if(3==t.nodeType){var a=t.data.removeAccents(true).toUpperCase().indexOf(i);if(a>=0){var s=document.createElement("mark");s.className="highlight";var r=t.splitText(a);r.splitText(i.length);var o=r.cloneNode(!0);s.appendChild(o),r.parentNode.replaceChild(s,r),n=1}}else if(1==t.nodeType&&t.childNodes&&!/(script|style)/i.test(t.tagName))for(var h=0;h<t.childNodes.length;++h)h+=e(t.childNodes[h],i);return n}return this.length&&t&&t.length?this.each(function(){e(this,t.toUpperCase())}):this},jQuery.fn.removeHighlight=function(){return this.find("mark.highlight").each(function(){with(this.parentNode.firstChild.nodeName,this.parentNode)replaceChild(this.firstChild,this),normalize()}).end()};
+
+// Ignore accents
+String.prototype.removeAccents = function(enabled) {
+  if (enabled) return this
+                      .replace(/[áàãâä]/gi,"a")
+                      .replace(/[éè¨ê]/gi,"e")
+                      .replace(/[íìïî]/gi,"i")
+                      .replace(/[óòöôõ]/gi,"o")
+                      .replace(/[úùüû]/gi, "u")
+                      .replace(/[ç]/gi, "c")
+                      .replace(/[ñ]/gi, "n");
+  return this;
+}
