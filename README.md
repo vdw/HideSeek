@@ -13,13 +13,14 @@ A simple, yet customizable quick/live search jQuery plugin
 * Highlight
 * Navigation
 * Ignore elements
+* Ignore accented characters
 * Custom events
 * Custom messages
 
 ## Compatibility
 
 Compatible with IE7+, Chrome, Firefox, Safari
-and jQuery 1.8.1, 1.9.1, 1.11.0, 2.1.0.
+and jQuery 1.8.x, 1.9.x, 1.11.x, 2.1.x.
 
 ## Credits
 * [Stevy.gr][4]
