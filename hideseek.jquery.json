@@ -9,7 +9,7 @@
     "jquery",
     "hideseek"
 	],
-	"version": "0.5.5",
+	"version": "0.6.0",
 	"author": {
 		"name": "Dimitris Krestos",
 		"email": "dkrestos@gmail.com",
@@ -33,6 +33,6 @@
 	"docs": "https://github.com/vdw/HideSeek#readme",
 	"download": "https://github.com/vdw/HideSeek/archive/master.zip",
 	"dependencies": {
-		"jquery": ">=1.8.1"
+		"jquery": ">=1.8.x"
 	}
 }
