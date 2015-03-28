@@ -23,6 +23,11 @@ $(document).ready(function() {
     ignore: '.ignore'
   });
 
+  $('#search-ignore-accents').hideseek({
+    highlight: true,
+    ignore_accents: true
+  });
+
   $('#search-custom-event').hideseek();
   $('#search-custom-event').on("_after", function() {
     alert('This alert comes after the search!')
