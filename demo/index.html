@@ -50,7 +50,7 @@
       <article>
         <h2>
           HideSeek is simple, yet customizable jQuery plugin for live search, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.11.0, 2.1.0. and
-          supports <a class="anchorLink" href="#highlight">highlighting</a>, <a class="anchorLink" href="#nodata">custom message</a>, <a class="anchorLink" href="#navigation">navigation</a>, <a class="anchorLink" href="#attribute">initialization via data attribute</a> and <a class="anchorLink" href="#custom_event">custom events</a>.</h2>
+          supports <a class="anchorLink" href="#highlight">highlighting</a>, <a class="anchorLink" href="#nodata">custom message</a>, <a class="anchorLink" href="#navigation">navigation</a>, <a class="anchorLink" href="#attribute">initialization via data attribute</a>, <a class="anchorLink" href="#custom_event">custom events</a> and more.</h2>
       </article>
     </section>
     <h3>Demonstration</h3>
@@ -162,7 +162,7 @@ $('#search-navigation').hideseek({
 
       <article id="navigation">
         <div class="column">
-        <h2>Ignore</h2>
+        <h2>Ignore elements</h2>
 <pre data-language="javascript">
 $('#search-ignore').hideseek({
   highlight: true,
@@ -184,6 +184,36 @@ $('#search-ignore').hideseek({
           <li>The Great Hedge Of India</li>
           <li>London Underground Aircraft Factory</li>
           <li>Seawise Giant</li>
+        </ul>
+        </div>
+        <div class="clear"></div>
+      </article>
+
+
+      <article id="navigation">
+        <div class="column">
+        <h2>Ignore accents</h2>
+<pre data-language="javascript">
+$('#search-ignore').hideseek({
+  highlight: true,
+  ignore_accents: true
+});
+</pre>
+        </div>
+        <div class="column">
+        <label for="search">Top 10 Fascinating Graves in Père Lachaise</label>
+        <input id="search-ignore-accents" name="search" placeholder="Start typing here" type="text" data-list=".ignore_accents_list" data-nodata="No results found" autocomplete="off">
+        <ul class="vertical ignore_accents_list">
+          <li>Oscar Wilde</li>
+          <li>Abelard and Heloise</li>
+          <li>Victor Noir</li>
+          <li>Théodore Géricault</li>
+          <li>Colette</li>
+          <li>Jim Morrison</li>
+          <li>Chopin</li>
+          <li>Molière</li>
+          <li>Georges Rodenbach</li>
+          <li>Félix Faure</li>
         </ul>
         </div>
         <div class="clear"></div>
