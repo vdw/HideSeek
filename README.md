@@ -28,7 +28,7 @@ and jQuery 1.8.x, 1.9.x, 1.11.x, 2.1.x.
 
 ## Copyright and license
 
-Copyright 2013 Dimitris Krestos
+Copyright 2015 Dimitris Krestos
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
