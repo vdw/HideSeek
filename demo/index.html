@@ -7,324 +7,374 @@
 
   <link rel="shortcut icon" href="favicon.ico" />
 
+  <!-- MOBILE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- MODERNIZR -->
   <script type="text/javascript" src="javascripts/vendor/modernizr.custom.js"></script>
 
   <!-- STYLES -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
-  <link rel="stylesheet" type="text/css" href="stylesheets/typography.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/vendor/normalize.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/vendor/skeleton.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
-  <link rel="stylesheet" type="text/css" href="stylesheets/github.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/vendor/github.css">
 
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
+  <meta prefix="og: http://ogp.me/ns#" property="og:title" content="HideSeek jQuery plugin" />
+  <meta prefix="og: http://ogp.me/ns#" property="og:type" content="website" />
+  <meta prefix="og: http://ogp.me/ns#" property="og:image" content="http://vdw.github.io/HideSeek/images/hideseek_logo.png" />
+  <meta prefix="og: http://ogp.me/ns#" property="og:url" content="http://vdw.github.io/HideSeek/" />
 </head>
-<!--[if lt IE 7]>  <body class="ie ie6 lte9 lte8 lte7"> <![endif]-->
-<!--[if IE 7]>     <body class="ie ie7 lte9 lte8 lte7"> <![endif]-->
-<!--[if IE 8]>     <body class="ie ie8 lte9 lte8">      <![endif]-->
-<!--[if IE 9]>     <body class="ie ie9 lte9">           <![endif]-->
-<!--[if gt IE 9]>  <body class="ie">                    <![endif]-->
-<!--[if !IE]><!--> <body>                               <!--<![endif]-->
-<img src="images/hideseek_logo.png" class="screenshot">
-<a href="https://github.com/vdw/HideSeek"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-<div id="wrapper">
 
-  <!-- HEADER -->
-  <div id="header_wrapper">
-    <header>
-      <h1><img src="images/hideseek_logo.png" class="logo">HideSeek</h1>
-      <h2>A simple, yet customizable live search jQuery plugin</h2>
-      <a class="button" href="https://github.com/vdw/HideSeek/archive/master.zip">download</a>
-      <a class="link" href="https://github.com/vdw/HideSeek">or view on GitHub</a>
-    </header>
+<body>
+  <img src="images/hideseek_logo.png" class="screenshot">
+  <a href="https://github.com/vdw/HideSeek"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <h1><img src="images/hideseek_logo.png" class="logo">HideSeek</h1>
+          <h2>A simple, yet customizable live search jQuery plugin</h2>
+          <a class="button" href="https://github.com/vdw/HideSeek/archive/master.zip">download</a>
+          <a class="link" href="https://github.com/vdw/HideSeek">or view on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="body" role="main">
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <h2>
+            HideSeek is simple, yet customizable jQuery plugin for live search, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.x, 1.9.x, 1.11.x, 2.1.x and
+            supports <a class="anchorLink" href="#highlight">highlighting</a>, <a class="anchorLink" href="#nodata">custom message</a>, <a class="anchorLink" href="#navigation">navigation</a>, <a class="anchorLink" href="#attribute">initialization via data attribute</a>, <a class="anchorLink" href="#custom_event">custom events</a> and more.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <div class="separator">Demonstration</div>
+      </div>
+    </div>
   </div>
-  <!-- HEADER ends -->
 
-  <!-- MAIN CONTAINER -->
-  <div id="body_wrapper">
-    <!-- <h3>About</h3> -->
-    <section id="body" role="main">
-      <article>
-        <h2>
-          HideSeek is simple, yet customizable jQuery plugin for live search, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.11.0, 2.1.0. and
-          supports <a class="anchorLink" href="#highlight">highlighting</a>, <a class="anchorLink" href="#nodata">custom message</a>, <a class="anchorLink" href="#navigation">navigation</a>, <a class="anchorLink" href="#attribute">initialization via data attribute</a>, <a class="anchorLink" href="#custom_event">custom events</a> and more.</h2>
-      </article>
-    </section>
-    <h3>Demonstration</h3>
-    <!-- CONTENT -->
-    <section>
-      <!-- CONTENT BLOCK -->
-      <article>
-        <div class="column">
-        <h2>Default usage</h2>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="six columns">
+          <article>
+            <h4>Default usage</h4>
 <pre data-language="javascript">
 $('#search-1').hideseek();
 </pre>
+          </article>
         </div>
-        <div class="column">
-        <label for="search">Programming Language Popularity</label>
-        <input id="search" name="search" placeholder="Start typing here" type="text" data-list=".default_list" autocomplete="off">
-        <ul class="vertical default_list">
-          <li>C</li>
-          <li>Java</li>
-          <li>PHP</li>
-          <li>JavaScript</li>
-          <li>C++</li>
-          <li>Python</li>
-          <li>Shell</li>
-          <li>Ruby</li>
-          <li>Objective C</li>
-          <li>C#</li>
-        </ul>
+        <div class="six columns">
+          <article>
+            <label for="search">Programming Language Popularity</label>
+            <input id="search" name="search" placeholder="Start typing here" type="text" data-list=".default_list" autocomplete="off">
+            <ul class="vertical default_list">
+              <li>C</li>
+              <li>Java</li>
+              <li>PHP</li>
+              <li>JavaScript</li>
+              <li>C++</li>
+              <li>Python</li>
+              <li>Shell</li>
+              <li>Ruby</li>
+              <li>Objective C</li>
+              <li>C#</li>
+            </ul>
+          </article>
         </div>
-        <div class="clear"></div>
-      </article>
-      <article id="highlight">
-        <div class="column">
-        <h2>Highlight</h2>
+      </div>
+
+      <div class="row">
+        <div class="six columns">
+          <article id="highlight">
+            <h4>Highlight</h4>
 <pre data-language="javascript">
 $('#search-highlight').hideseek({
   highlight: true
 });
 </pre>
+          </article>
         </div>
-        <div class="column">
-        <label for="search-highlight">Browser Statistics and Trends</label>
-        <input id="search-highlight" name="search-highlight" placeholder="Start typing here" type="text" data-list=".highlight_list" autocomplete="off">
-        <ul class="vertical highlight_list">
-          <li>Chrome</li>
-          <li>Firefox</li>
-          <li>Internet Explorer</li>
-          <li>Safari</li>
-          <li>Opera</li>
-        </ul>
+        <div class="six columns">
+          <article>
+            <label for="search-highlight">Browser Statistics and Trends</label>
+            <input id="search-highlight" name="search-highlight" placeholder="Start typing here" type="text" data-list=".highlight_list" autocomplete="off">
+            <ul class="vertical highlight_list">
+              <li>Chrome</li>
+              <li>Firefox</li>
+              <li>Internet Explorer</li>
+              <li>Safari</li>
+              <li>Opera</li>
+            </ul>
+          </article>
         </div>
-        <div class="clear"></div>
-      </article>
-      <article id="nodata">
-        <div class="column">
-        <h2>No results message</h2>
+      </div>
+
+
+      <div class="row">
+        <div class="six columns">
+          <article id="nodata">
+            <h4>No results message</h4>
 <pre data-language="javascript">
 $('#search-nodata').hideseek({
   nodata: 'No results found'
 });
 </pre>
+          </article>
         </div>
-        <div class="column">
-        <label for="search-nodata">Top Greatest Movies of All Time</label>
-        <input id="search-nodata" name="search-nodata" placeholder="Start typing here" type="text" data-list=".nodata_list" autocomplete="off">
-        <ul class="vertical nodata_list">
-          <li>The Godfather</li>
-          <li>Schindler's List</li>
-          <li>Raging Bull</li>
-          <li>The Shawshank Redemption</li>
-          <li>Casablanca</li>
-          <li>One Flew Over the Cuckoo's Nest</li>
-          <li>Gone with the Wind</li>
-          <li>Citizen Kane</li>
-        </ul>
+        <div class="six columns">
+          <article>
+            <label for="search-nodata">Top Greatest Movies of All Time</label>
+            <input id="search-nodata" name="search-nodata" placeholder="Start typing here" type="text" data-list=".nodata_list" autocomplete="off">
+            <ul class="vertical nodata_list">
+              <li>The Godfather</li>
+              <li>Schindler's List</li>
+              <li>Raging Bull</li>
+              <li>The Shawshank Redemption</li>
+              <li>Casablanca</li>
+              <li>One Flew Over the Cuckoo's Nest</li>
+              <li>Gone with the Wind</li>
+              <li>Citizen Kane</li>
+            </ul>
+          </article>
         </div>
-        <div class="clear"></div>
-      </article>
-      <!-- CONTENT BLOCK -->
-      <article id="navigation">
-        <div class="column">
-        <h2>Navigation</h2>
+      </div>
+
+      <div class="row">
+        <div class="six columns">
+          <article id="navigation">
+            <h4>Navigation</h4>
 <pre data-language="javascript">
 $('#search-navigation').hideseek({
   nodata: 'No results found',
   navigation: true
 });
 </pre>
+          </article>
         </div>
-        <div class="column">
-        <label for="search">Top 10 Most Popular Frameworks</label>
-        <input id="search-navigation" name="search" placeholder="Start typing here" type="text" data-list=".navigation_list" data-nodata="No results found" autocomplete="off">
-        <ul class="vertical navigation_list">
-          <li><a href="http://www.asp.net/">ASP.NET</a></li>
-          <li><a href="http://flask.pocoo.org/">Flask</a></li>
-          <li><a href="http://codeigniter.com/">CodeIgniter</a></li>
-          <li><a href="http://framework.zend.com/">Zend</a></li>
-          <li><a href="http://rubyonrails.org/">Ruby on Rails</a></li>
-          <li><a href="http://angularjs.org/">AngularJS</a></li>
-          <li><a href="http://www.djangoproject.com/">Django</a></li>
-          <li><a href="http://www.yiiframework.com/">Yii</a></li>
-          <li><a href="http://symfony.com/">Symfony</a></li>
-          <li><a href="http://cakephp.org/">CakePHP</a></li>
-        </ul>
+        <div class="six columns">
+          <article>
+            <label for="search">Top 10 Most Popular Frameworks</label>
+            <input id="search-navigation" name="search" placeholder="Start typing here" type="text" data-list=".navigation_list" data-nodata="No results found" autocomplete="off">
+            <ul class="vertical navigation_list">
+              <li><a href="http://www.asp.net/">ASP.NET</a></li>
+              <li><a href="http://flask.pocoo.org/">Flask</a></li>
+              <li><a href="http://codeigniter.com/">CodeIgniter</a></li>
+              <li><a href="http://framework.zend.com/">Zend</a></li>
+              <li><a href="http://rubyonrails.org/">Ruby on Rails</a></li>
+              <li><a href="http://angularjs.org/">AngularJS</a></li>
+              <li><a href="http://www.djangoproject.com/">Django</a></li>
+              <li><a href="http://www.yiiframework.com/">Yii</a></li>
+              <li><a href="http://symfony.com/">Symfony</a></li>
+              <li><a href="http://cakephp.org/">CakePHP</a></li>
+            </ul>
+          </article>
         </div>
-        <div class="clear"></div>
-      </article>
+      </div>
 
-
-      <article id="navigation">
-        <div class="column">
-        <h2>Ignore elements</h2>
+      <div class="row">
+        <div class="six columns">
+          <article>
+            <h4>Ignore elements</h4>
 <pre data-language="javascript">
 $('#search-ignore').hideseek({
   highlight: true,
   ignore: '.ignore'
 });
 </pre>
+          </article>
         </div>
-        <div class="column">
-        <label for="search">Top 10 Massive Things We Built And Then Destroyed</label>
-        <input id="search-ignore" name="search" placeholder="Start typing here" type="text" data-list=".ignore_list" data-nodata="No results found" autocomplete="off">
-        <ul class="vertical ignore_list">
-          <li>The Great Wheel</li>
-          <li>SS Great Eastern</li>
-          <li>Tsar Tank</li>
-          <li>The Crystal Palace</li>
-          <li class="ignore">Big Muskie (ignored)</li>
-          <li>Schwerer Gustav</li>
-          <li>Moskva Pool</li>
-          <li>The Great Hedge Of India</li>
-          <li>London Underground Aircraft Factory</li>
-          <li>Seawise Giant</li>
-        </ul>
+        <div class="six columns">
+          <article>
+            <label for="search">Top 10 Massive Things We Built And Then Destroyed</label>
+            <input id="search-ignore" name="search" placeholder="Start typing here" type="text" data-list=".ignore_list" data-nodata="No results found" autocomplete="off">
+            <ul class="vertical ignore_list">
+              <li>The Great Wheel</li>
+              <li>SS Great Eastern</li>
+              <li>Tsar Tank</li>
+              <li>The Crystal Palace</li>
+              <li class="ignore">Big Muskie (ignored)</li>
+              <li>Schwerer Gustav</li>
+              <li>Moskva Pool</li>
+              <li>The Great Hedge Of India</li>
+              <li>London Underground Aircraft Factory</li>
+              <li>Seawise Giant</li>
+            </ul>
+          </article>
         </div>
-        <div class="clear"></div>
-      </article>
+      </div>
 
 
-      <article id="navigation">
-        <div class="column">
-        <h2>Ignore accents</h2>
+      <div class="row">
+        <div class="six columns">
+          <article>
+            <h4>Ignore accents</h4>
 <pre data-language="javascript">
 $('#search-ignore').hideseek({
   highlight: true,
   ignore_accents: true
 });
 </pre>
+          </article>
         </div>
-        <div class="column">
-        <label for="search">Top 10 Fascinating Graves in Père Lachaise</label>
-        <input id="search-ignore-accents" name="search" placeholder="Start typing here" type="text" data-list=".ignore_accents_list" data-nodata="No results found" autocomplete="off">
-        <ul class="vertical ignore_accents_list">
-          <li>Oscar Wilde</li>
-          <li>Abelard and Heloise</li>
-          <li>Victor Noir</li>
-          <li>Théodore Géricault</li>
-          <li>Colette</li>
-          <li>Jim Morrison</li>
-          <li>Chopin</li>
-          <li>Molière</li>
-          <li>Georges Rodenbach</li>
-          <li>Félix Faure</li>
-        </ul>
+        <div class="six columns">
+          <article>
+            <label for="search">Top 10 Fascinating Graves in Père Lachaise</label>
+            <input id="search-ignore-accents" name="search" placeholder="Start typing here" type="text" data-list=".ignore_accents_list" data-nodata="No results found" autocomplete="off">
+            <ul class="vertical ignore_accents_list">
+              <li>Oscar Wilde</li>
+              <li>Abelard and Heloise</li>
+              <li>Victor Noir</li>
+              <li>Théodore Géricault</li>
+              <li>Colette</li>
+              <li>Jim Morrison</li>
+              <li>Chopin</li>
+              <li>Molière</li>
+              <li>Georges Rodenbach</li>
+              <li>Félix Faure</li>
+            </ul>
+          </article>
         </div>
-        <div class="clear"></div>
-      </article>
+      </div>
+    </div>
+  </section>
 
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <div class="separator" id="custom_event">Custom Events</div>
+      </div>
+    </div>
+  </div>
 
-    </section>
-    <h3 id="custom_event">Custom Events</h3>
-    <section>
-      <!-- CONTENT BLOCK -->
-      <article>
-        <div class="column">
-        <h2>Custom event "_after"</h2>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="six columns">
+          <article>
+            <h4>Custom event "_after"</h4>
 <pre data-language="javascript">
 $('.after_event').hideseek();
 $('.after_event').on("_after", function() {
   alert('This alert comes after the search is finished!')
 });
 </pre>
+          </article>
         </div>
-        <div class="column">
-        <label for="search">Top 10 Countries That Offer Mail-Order Brides</label>
-        <input id="search-custom-event" name="search" placeholder="Start typing here" type="text" data-list=".custom_event_list" data-nodata="No results found" autocomplete="off">
-        <ul class="vertical custom_event_list">
-          <li>Russia</li>
-          <li>The Philippines</li>
-          <li>Colombia</li>
-          <li>Dominican Republic</li>
-          <li>Ukraine</li>
-          <li>Thailand</li>
-          <li>India</li>
-          <li>China</li>
-          <li>Brazil</li>
-          <li>Vietnam</li>
-        </ul>
+        <div class="six columns">
+          <article>
+            <label for="search">Top 10 Countries That Offer Mail-Order Brides</label>
+            <input id="search-custom-event" name="search" placeholder="Start typing here" type="text" data-list=".custom_event_list" data-nodata="No results found" autocomplete="off">
+            <ul class="vertical custom_event_list">
+              <li>Russia</li>
+              <li>The Philippines</li>
+              <li>Colombia</li>
+              <li>Dominican Republic</li>
+              <li>Ukraine</li>
+              <li>Thailand</li>
+              <li>India</li>
+              <li>China</li>
+              <li>Brazil</li>
+              <li>Vietnam</li>
+            </ul>
+          </article>
         </div>
-        <div class="clear"></div>
-      </article>
-      <article>
-        <div class="column">
-        <h2>Custom event "_after_each"</h2>
+      </div>
+
+      <div class="row">
+        <div class="six columns">
+          <article>
+            <h4>Custom event "_after_each"</h4>
 <pre data-language="javascript">
 $('.after_each_event').hideseek();
 $('.after_each_event').on("_after_each", function() {
   alert('This alert comes after the procession of each element!')
 });
 </pre>
+          </article>
         </div>
-        <div class="column">
-        <label for="search">Top 10 Crazy Structures Made With Legos</label>
-        <input id="search-custom-event-2" name="search" placeholder="Start typing here" type="text" data-list=".custom_event_2_list" data-nodata="No results found" autocomplete="off">
-        <ul class="vertical custom_event_2_list">
-          <li>House made from Lego’s</li>
-          <li>Gigantic Aircraft Carrier model</li>
-          <li>Enormous replica of A380 Airbus</li>
-        </ul>
+        <div class="six columns">
+          <article>
+            <label for="search">Top 10 Crazy Structures Made With Legos</label>
+            <input id="search-custom-event-2" name="search" placeholder="Start typing here" type="text" data-list=".custom_event_2_list" data-nodata="No results found" autocomplete="off">
+            <ul class="vertical custom_event_2_list">
+              <li>House made from Lego’s</li>
+              <li>Gigantic Aircraft Carrier model</li>
+              <li>Enormous replica of A380 Airbus</li>
+            </ul>
+          </article>
         </div>
-        <div class="clear"></div>
-      </article>
-    </section>
-    <!-- CONTENT ends-->
-    <h3>Use of data attribute to load</h3>
-    <section>
-      <!-- CONTENT BLOCK -->
-      <article id="attribute">
-        <div class="column">
-        <h2>The attribute "data-toggle"</h2>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <div class="separator">Use of data attribute to load</div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="six columns">
+          <article id="attribute">
+            <h4>The attribute "data-toggle"</h4>
 <pre data-language="javascript">
 <input data-toggle="hideseek">
 </pre>
+          </article>
         </div>
-        <div class="column">
-        <label for="search">Top 10 Front-End Development Frameworks</label>
-        <input id="search" name="search" placeholder="Start typing here" type="text" data-toggle="hideseek" data-list=".default_list_data" data-nodata="No results found" autocomplete="off">
-        <ul class="vertical default_list_data">
-          <li>Bootstrap</li>
-          <li>Fbootstrapp</li>
-          <li>BootMetro</li>
-          <li>Kickstrap</li>
-          <li>Foundation</li>
-          <li>GroundworkCSS</li>
-          <li>Gumby</li>
-          <li>HTML KickStart</li>
-          <li>IVORY</li>
-          <li>Kube</li>
-        </ul>
+        <div class="six columns">
+          <article>
+            <label for="search">Top 10 Front-End Development Frameworks</label>
+            <input id="search" name="search" placeholder="Start typing here" type="text" data-toggle="hideseek" data-list=".default_list_data" data-nodata="No results found" autocomplete="off">
+            <ul class="vertical default_list_data">
+              <li>Bootstrap</li>
+              <li>Fbootstrapp</li>
+              <li>BootMetro</li>
+              <li>Kickstrap</li>
+              <li>Foundation</li>
+              <li>GroundworkCSS</li>
+              <li>Gumby</li>
+              <li>HTML KickStart</li>
+              <li>IVORY</li>
+              <li>Kube</li>
+            </ul>
+          </article>
         </div>
-        <div class="clear"></div>
-      </article>
-    </section>
-  </div>
-  <!-- MAIN CONTAINER ends -->
-
-  <!-- FOOTER -->
-  <footer>
-    <!-- FOOTER CONTAINER-->
-    <div class="footer_wrapper">
-      <p>Built by <a href="https://github.com/vdw">vdw</a> aka <a href="http://gr.linkedin.com/in/dkrestos/" target="_blank">Dimitris Krestos</a><br />Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a></p>
+      </div>
     </div>
-    <!-- FOOTER CONTAINER ends -->
-  </footer>
+  </section>
 
-</div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          Built by <a href="https://github.com/vdw">vdw</a> aka <a href="http://gr.linkedin.com/in/dkrestos/" target="_blank">Dimitris Krestos</a><br />Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
   <!-- JS -->
-  <script type="text/javascript" src="javascripts/vendor/waypoints.min.js"></script>
-  <script type="text/javascript" src="javascripts/vendor/waypoints-sticky.min.js"></script>
   <script type="text/javascript" src="javascripts/vendor/jquery.hideseek.min.js"></script>
   <script type="text/javascript" src="javascripts/vendor/rainbow-custom.min.js"></script>
   <script type="text/javascript" src="javascripts/vendor/jquery.anchor.js"></script>
