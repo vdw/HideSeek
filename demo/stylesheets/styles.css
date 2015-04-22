@@ -59,7 +59,7 @@ INPUT[type="text"] {
 HEADER {
 	background: #3A3E3D;
 	color: white;
-	height: 400px;
+	min-height: 400px;
 	margin: 0 auto;
 	width: 100%;
 }
