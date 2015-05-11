@@ -4,7 +4,7 @@
  * @copyright Copyright 2015, Dimitris Krestos
  * @license   Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
  * @link      http://vdw.staytuned.gr
- * @version   v0.6.0
+ * @version   v0.6.1
  *
  * Dependencies are include in minified versions at the bottom:
  * 1. Highlight v4 by Johann Burkard
@@ -45,7 +45,8 @@
       highlight:      false,
       ignore:         '',
       navigation:     false,
-      ignore_accents: false
+      ignore_accents: false,
+      hidden_mode:    false
     };
 
     var options = $.extend(defaults, options);
@@ -61,10 +62,13 @@
       options.highlight      = $this.data('highlight') || options.highlight;
       options.ignore         = $this.data('ignore') || options.ignore;
       options.ignore_accents = $this.data('ignore_accents') || options.ignore_accents;
+      options.hidden_mode    = $this.data('hidden_mode') || options.hidden_mode;
 
       var $list = $(options.list);
 
       if (options.navigation) $this.attr('autocomplete', 'off');
+
+      if (options.hidden_mode)   $list.children().hide();
 
       $this.keyup(function(e) {
 
@@ -76,7 +80,9 @@
 
             var data = (options.attribute != 'text') ? $(this).attr(options.attribute).toLowerCase() : $(this).text().toLowerCase();
 
-            if (data.removeAccents(options.ignore_accents).indexOf(q) == -1) {
+            var treaty = data.removeAccents(options.ignore_accents).indexOf(q) == -1 || q === (options.hidden_mode ? '' : false)
+
+            if (treaty) {
 
               $(this).hide();
 
