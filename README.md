@@ -16,6 +16,7 @@ A simple, yet customizable quick/live search jQuery plugin
 * Ignore accented characters
 * Custom events
 * Custom messages
+* Hidden mode
 
 ## Compatibility
 
