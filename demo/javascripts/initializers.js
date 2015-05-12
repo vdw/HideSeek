@@ -26,6 +26,10 @@ $(document).ready(function() {
     ignore_accents: true
   });
 
+  $('#search-hidden-mode').hideseek({
+    hidden_mode: true
+  });
+
   $('#search-custom-event').hideseek();
   $('#search-custom-event').on("_after", function() {
     alert('This alert comes after the search!')
