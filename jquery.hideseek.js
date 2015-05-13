@@ -4,7 +4,7 @@
  * @copyright Copyright 2015, Dimitris Krestos
  * @license   Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
  * @link      http://vdw.staytuned.gr
- * @version   v0.6.1
+ * @version   v0.6.2
  *
  * Dependencies are include in minified versions at the bottom:
  * 1. Highlight v4 by Johann Burkard
@@ -55,20 +55,16 @@
 
       var $this = $(this);
 
-      // Ungly overwrite
-      options.list           = $this.data('list') || options.list;
-      options.nodata         = $this.data('nodata') || options.nodata;
-      options.attribute      = $this.data('attribute') || options.attribute;
-      options.highlight      = $this.data('highlight') || options.highlight;
-      options.ignore         = $this.data('ignore') || options.ignore;
-      options.ignore_accents = $this.data('ignore_accents') || options.ignore_accents;
-      options.hidden_mode    = $this.data('hidden_mode') || options.hidden_mode;
+      $this.opts = [];
 
-      var $list = $(options.list);
+      ['list', 'nodata', 'attribute', 'highlight', 'ignore', 'navigation', 'ignore_accents', 'hidden_mode']
+        .map(function(i) { $this.opts[i] = $this.data(i) || options[i]; });
 
-      if (options.navigation) $this.attr('autocomplete', 'off');
+      var $list = $($this.opts.list);
 
-      if (options.hidden_mode)   $list.children().hide();
+      if ($this.opts.navigation)  $this.attr('autocomplete', 'off');
+
+      if ($this.opts.hidden_mode) $list.children().hide();
 
       $this.keyup(function(e) {
 
@@ -76,11 +72,11 @@
 
           var q = $this.val().toLowerCase();
 
-          $list.children(options.ignore.trim() ? ":not(" + options.ignore + ")" : '').removeClass('selected').each(function() {
+          $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function() {
 
-            var data = (options.attribute != 'text') ? $(this).attr(options.attribute).toLowerCase() : $(this).text().toLowerCase();
+            var data = ($this.opts.attribute != 'text') ? $(this).attr($this.opts.attribute).toLowerCase() : $(this).text().toLowerCase();
 
-            var treaty = data.removeAccents(options.ignore_accents).indexOf(q) == -1 || q === (options.hidden_mode ? '' : false)
+            var treaty = data.removeAccents($this.opts.ignore_accents).indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false)
 
             if (treaty) {
 
@@ -90,7 +86,7 @@
 
             } else {
 
-              options.highlight ? $(this).removeHighlight().highlight(q).show() : $(this).show();
+              $this.opts.highlight ? $(this).removeHighlight().highlight(q).show() : $(this).show();
 
               $this.trigger('_after_each');
 
@@ -99,7 +95,7 @@
           });
 
           // No results message
-          if (options.nodata) {
+          if ($this.opts.nodata) {
 
             $list.find('.no-results').remove();
 
@@ -112,8 +108,8 @@
                 .removeHighlight()
                 .addClass('no-results')
                 .show()
-                .prependTo(options.list)
-                .text(options.nodata);
+                .prependTo($this.opts.list)
+                .text($this.opts.nodata);
 
             }
 
@@ -136,7 +132,7 @@
           return current(element).nextAll(":visible:first");
         };
 
-        if (options.navigation) {
+        if ($this.opts.navigation) {
 
           if (e.keyCode == 38) {
 
