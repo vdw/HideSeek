@@ -57,8 +57,9 @@
 
       $this.opts = [];
 
-      ['list', 'nodata', 'attribute', 'highlight', 'ignore', 'navigation', 'ignore_accents', 'hidden_mode']
-        .map(function(i) { $this.opts[i] = $this.data(i) || options[i]; });
+      $.map( ['list', 'nodata', 'attribute', 'highlight', 'ignore', 'navigation', 'ignore_accents', 'hidden_mode'], function( val, i ) {
+        $this.opts[val] = $this.data(val) || options[val];
+      } );
 
       var $list = $($this.opts.list);
 
