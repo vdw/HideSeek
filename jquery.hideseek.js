@@ -217,4 +217,4 @@ String.prototype.removeAccents = function(enabled) {
                       .replace(/[ç]/gi, "c")
                       .replace(/[ñ]/gi, "n");
   return this;
-}
+};
