@@ -23,6 +23,12 @@ A simple, yet customizable quick/live search jQuery plugin
 Compatible with IE7+, Chrome, Firefox, Safari
 and jQuery 1.8.x, 1.9.x, 1.11.x, 2.1.x.
 
+## Questions/Answers and Enhancements
+
+Do you have any questions? First, take a look [here][6].
+
+Or if you are looking for enhancements, [here][7].
+
 ## Credits
 * [Stevy.gr][4]
 * [Prince.gr][5]
@@ -48,3 +54,5 @@ limitations under the License.
   [3]: https://github.com/vdw/HideSeek/wiki
   [4]: http://stevy.gr/
   [5]: http://prince.gr/
+  [6]: https://github.com/vdw/HideSeek/issues?utf8=%E2%9C%93&q=label%3Aquestion
+  [7]: https://github.com/vdw/HideSeek/issues?utf8=%E2%9C%93&q=label%3Aenhancement
