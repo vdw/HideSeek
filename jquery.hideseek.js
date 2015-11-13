@@ -71,7 +71,7 @@
 
         if (e.keyCode != 38 && e.keyCode != 40 && e.keyCode != 13) {
 
-          var q = $this.val().toLowerCase();
+          var q = $this.val().toLowerCase().removeAccents($this.opts.ignore_accents);
 
           $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function() {
 
