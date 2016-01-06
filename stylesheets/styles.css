@@ -219,3 +219,8 @@ FOOTER {
 	margin-right: 10px;
 	vertical-align: middle;
 }
+
+.origin {
+	font-weight: bold;
+	margin-left: 8px;
+}

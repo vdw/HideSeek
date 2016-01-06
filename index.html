@@ -265,6 +265,39 @@ $('#search-ignore').hideseek({
       <div class="row">
         <div class="six columns">
           <article>
+            <h4>Headers</h4>
+<pre data-language="javascript">
+$('#search-headers').hideseek({
+  headers: '.origin'
+});
+</pre>
+          </article>
+        </div>
+        <div class="six columns">
+          <article>
+            <label for="search">Ancient Gods</label>
+            <input id="search-headers" name="search" placeholder="Start typing here" type="text" data-list=".headers_list" data-nodata="No results found" autocomplete="off">
+            <ul class="vertical headers_list">
+              <li class="origin">Greek</li>
+              <li>Zeus</li>
+              <li>Poseidon</li>
+              <li>Hades</li>
+              <li class="origin">Roman</li>
+              <li>Mars</li>
+              <li>Jupiter</li>
+              <li>Minerva</li>
+              <li class="origin">Norse</li>
+              <li>Odin</li>
+              <li>Thor</li>
+              <li>Loki</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="six columns">
+          <article>
             <h4>Hidden mode</h4>
 <pre data-language="javascript">
 $('#search-hidden-mode').hideseek({
