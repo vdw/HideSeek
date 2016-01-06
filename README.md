@@ -17,6 +17,7 @@ A simple, yet customizable quick/live search jQuery plugin
 * Custom events
 * Custom messages
 * Hidden mode
+* Support lists with headings
 
 ## Compatibility
 
