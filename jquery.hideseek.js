@@ -44,6 +44,7 @@
       attribute:      'text',
       highlight:      false,
       ignore:         '',
+      headers:        '',
       navigation:     false,
       ignore_accents: false,
       hidden_mode:    false
@@ -60,6 +61,9 @@
       $.map( ['list', 'nodata', 'attribute', 'highlight', 'ignore', 'navigation', 'ignore_accents', 'hidden_mode'], function( val, i ) {
         $this.opts[val] = $this.data(val) || options[val];
       } );
+
+      if ($this.opts.headers)
+        $this.opts.ignore += $this.opts.ignore ? ', ' + $this.opts.headers : $this.opts.headers;
 
       var $list = $($this.opts.list);
 
@@ -114,6 +118,17 @@
 
             }
 
+          }
+
+          // hide headers with no results
+          if ($this.opts.headers) {
+            $($this.opts.headers, $list).each(function() {
+              if (!$(this).nextUntil($this.opts.headers).not('[style*="display: none"],' + $this.opts.ignore).length) {
+                $(this).hide();
+              } else {
+                $(this).show();
+              }
+            });
           }
 
           $this.trigger('_after');
