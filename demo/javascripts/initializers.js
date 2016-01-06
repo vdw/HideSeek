@@ -26,6 +26,11 @@ $(document).ready(function() {
     ignore_accents: true
   });
 
+  $('#search-headers').hideseek({
+    highlight: true,
+    headers: '.origin'
+  });
+
   $('#search-hidden-mode').hideseek({
     hidden_mode: true
   });
