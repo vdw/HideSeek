@@ -79,7 +79,13 @@
 
           $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function() {
 
-            var data = ($this.opts.attribute != 'text') ? $(this).attr($this.opts.attribute).toLowerCase() : $(this).text().toLowerCase();
+            var data = ($this.opts.attribute != 'text') ? $(this).attr($this.opts.attribute) : $(this).text();
+
+            if (data) {
+              data = data.toLowerCase();
+            } else {
+              data = "";
+            }
 
             var treaty = data.removeAccents($this.opts.ignore_accents).indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false)
 
