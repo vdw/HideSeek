@@ -47,7 +47,8 @@
       headers:        '',
       navigation:     false,
       ignore_accents: false,
-      hidden_mode:    false
+      hidden_mode:    false,
+      min_chars:      1
     };
 
     var options = $.extend(defaults, options);
@@ -58,7 +59,7 @@
 
       $this.opts = [];
 
-      $.map( ['list', 'nodata', 'attribute', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode'], function( val, i ) {
+      $.map( ['list', 'nodata', 'attribute', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars'], function( val, i ) {
         $this.opts[val] = $this.data(val) || options[val];
       } );
 
@@ -73,7 +74,7 @@
 
       $this.keyup(function(e) {
 
-        if (e.keyCode != 38 && e.keyCode != 40 && e.keyCode != 13) {
+        if (e.keyCode != 38 && e.keyCode != 40 && e.keyCode != 13 && ( e.keyCode != 8 ? $this.val().length >= $this.opts.min_chars : true ) ) {
 
           var q = $this.val().toLowerCase();
 
