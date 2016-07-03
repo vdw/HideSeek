@@ -121,6 +121,8 @@
                 .prependTo($this.opts.list)
                 .text($this.opts.nodata);
 
+              $this.trigger('_after_nodata');
+
             }
 
           }
