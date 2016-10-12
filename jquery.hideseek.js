@@ -48,23 +48,10 @@
       navigation:     false,
       ignore_accents: false,
       hidden_mode:    false,
-      min_chars:      1,
-      max_results:    10
+      min_chars:      1
     };
 
     var options = $.extend(defaults, options);
-
-    const addMaxResults = function addMax($this) {
-      $($this.opts.list).append('<div id="max-results" value="Max results limit" class="list-item"></div>');
-      const $maxRes = $('div#max-results');
-      $maxRes.hide()
-        .append('<span class="cat-span"><strong>Max results limit (' + $this.opts.max_results + ') reached</strong></span>')
-        .append('<span>Click to display all results for this search term. (This may take a while)</span>');
-
-      $this.closest('div').find('.description-list').find('#max-results').click(function() {
-        $this.trigger('updateListNoMax');
-      });
-    };
 
     return this.each(function() {
 
@@ -72,7 +59,7 @@
 
       $this.opts = [];
 
-      $.map( ['list', 'nodata', 'attribute', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars', 'max_results'], function(val, i) {
+      $.map( ['list', 'nodata', 'attribute', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars'], function( val, i ) {
         $this.opts[val] = $this.data(val) || options[val];
       } );
 
@@ -81,52 +68,17 @@
 
       var $list = $($this.opts.list);
 
-      if ($list.find('#max-results').length == 0) addMaxResults($this);
-
       if ($this.opts.navigation)  $this.attr('autocomplete', 'off');
 
       if ($this.opts.hidden_mode) $list.children().hide();
 
-      $this.on('keyup', function(e) {
-        $this.trigger('updateList');
-      });
+      $this.keyup(function(e) {
 
-      $this.on('updateList', function(e) {
-        updateList(e, true);
-      });
-
-      $this.on("updateListNoMax", function(e) {
-        updateList(e, false);
-      });
-
-      const updateList = function listUpdate(event, max) {
         if (e.keyCode != 38 && e.keyCode != 40 && e.keyCode != 13 && ( e.keyCode != 8 ? $this.val().length >= $this.opts.min_chars : true ) ) {
 
           var q = $this.val().toLowerCase();
-          var matches = 0;
-          var maxReached = false;
-
-          if ( max ) {
-            $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function() {
-
-              $(this).hide();
-
-            });
-          }          
 
           $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function() {
-
-            if (max) {
-
-              if (($this.opts.max_results != 0) && (matches >= $this.opts.max_results)) {
-
-                maxReached = true;
-
-                return false;
-
-              }
-
-            }             
 
             var data = (
                         $this.opts.attribute != 'text'
@@ -134,7 +86,7 @@
                           : $(this).text()
                         ).toLowerCase();
 
-            var treaty = data.removeAccents($this.opts.ignore_accents).indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false);
+            var treaty = data.removeAccents($this.opts.ignore_accents).indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false)
 
             if (treaty) {
 
@@ -144,43 +96,13 @@
 
             } else {
 
-              if ($this.opts.highlight) {
-
-                $(this).removeHighlight().highlight(q).show();
-
-                $('#max-results').removeHighlight();
-
-              } else {
-
-                $(this).show();
-
-              }
+              $this.opts.highlight ? $(this).removeHighlight().highlight(q).show() : $(this).show();
 
               $this.trigger('_after_each');
-
-              if (max) matches += 1;
 
             }
 
           });
-
-          if (max) {
-
-            if (maxReached) {
-
-              $list.find('#max-results').show();
-
-            } else {
-
-              $list.find('#max-results').hide();
-
-            }
-
-          } else {
-
-            $list.find('#max-results').hide();
-
-          }          
 
           // No results message
           if ($this.opts.nodata) {
@@ -278,7 +200,8 @@
           };
 
         };
-      };
+
+      });
 
     });
 
@@ -290,7 +213,7 @@
 
 /*
 
-highlight v4
+highlight v5
 
 Highlights arbitrary terms.
 
@@ -303,7 +226,7 @@ Johann Burkard
 <mailto:jb@eaio.com>
 
 */
-jQuery.fn.highlight=function(t){function e(t,i){var n=0;if(3==t.nodeType){var a=t.data.removeAccents(true).toUpperCase().indexOf(i);if(a>=0){var s=document.createElement("mark");s.className="highlight";var r=t.splitText(a);r.splitText(i.length);var o=r.cloneNode(!0);s.appendChild(o),r.parentNode.replaceChild(s,r),n=1}}else if(1==t.nodeType&&t.childNodes&&!/(script|style)/i.test(t.tagName))for(var h=0;h<t.childNodes.length;++h)h+=e(t.childNodes[h],i);return n}return this.length&&t&&t.length?this.each(function(){e(this,t.toUpperCase())}):this},jQuery.fn.removeHighlight=function(){return this.find("mark.highlight").each(function(){with(this.parentNode.firstChild.nodeName,this.parentNode)replaceChild(this.firstChild,this),normalize()}).end()};
+jQuery.fn.highlight=function(t){function e(t,i){var n=0;if(3==t.nodeType){var a=t.data.removeAccents(true).toUpperCase().indexOf(i);if(a>=0){var s=document.createElement('span');s.className="highlight";var r=t.splitText(a);r.splitText(i.length);var o=r.cloneNode(!0);s.appendChild(o),r.parentNode.replaceChild(s,r),n=1}}else if(1==t.nodeType&&t.childNodes&&!/(script|style)/i.test(t.tagName))for(var h=0;h<t.childNodes.length;++h)h+=e(t.childNodes[h],i);return n}return this.length&&t&&t.length?this.each(function(){e(this,t.toUpperCase())}):this},jQuery.fn.removeHighlight=function(){return this.find("span.highlight").each(function(){with(this.parentNode.firstChild.nodeName,this.parentNode)replaceChild(this.firstChild,this),normalize()}).end()};
 
 // Ignore accents
 String.prototype.removeAccents = function(enabled) {
