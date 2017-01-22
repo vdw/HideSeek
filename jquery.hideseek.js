@@ -74,7 +74,7 @@
 
       $this.keyup(function(e) {
 
-        if (e.keyCode != 38 && e.keyCode != 40 && e.keyCode != 13 && ( e.keyCode != 8 ? $this.val().length >= $this.opts.min_chars : true ) ) {
+        if ( [38, 40, 13].indexOf(e.keyCode) == -1 && ( e.keyCode != 8 ? $this.val().length >= $this.opts.min_chars : true ) ) {
 
           var q = $this.val().toLowerCase();
 
@@ -92,15 +92,13 @@
 
               $(this).hide();
 
-              $this.trigger('_after_each');
-
             } else {
 
               $this.opts.highlight ? $(this).removeHighlight().highlight(q).show() : $(this).show();
 
-              $this.trigger('_after_each');
-
             }
+
+            $this.trigger('_after_each');
 
           });
 
