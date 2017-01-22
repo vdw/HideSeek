@@ -41,7 +41,7 @@ $(document).ready(function() {
   });
 
   $('#search-custom-event-2').hideseek();
-  $('#search-custom-event-2').on("_after", function() {
+  $('#search-custom-event-2').on("_after_each", function() {
     alert('This alert comes after the procession of each element!')
   });
 
