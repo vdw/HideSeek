@@ -37,8 +37,10 @@ INPUT[type="text"] {
 	background: #F1F1F1;
 	border: 0;
 	border-bottom: 1px solid #c6c6c6;
+	border-radius: 0;
 	margin-bottom: 10px;
-	padding: 10px 0 10px 10px;
+	padding: 0;
+	text-indent: 10px;
 	width: 100%;
 }
 
@@ -138,7 +140,8 @@ ARTICLE LABEL {
 	font-size: 16px;
 	font-weight: 100;
 	line-height: 20px;
-	padding: 10px 0 10px 10px;
+	padding: 10px 0;
+	text-indent: 10px;
 	width: 100%;
 }
 
