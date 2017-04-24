@@ -30,6 +30,11 @@ Do you have any questions? First, take a look [here][6].
 
 Or if you are looking for enhancements, [here][7].
 
+## CDN
+Served using [RawGit][8]:
+* [Production URL][9]
+* [Development URL][10]
+
 ## Credits
 * [Stevy.gr][4]
 * [Prince.gr][5]
@@ -57,3 +62,6 @@ limitations under the License.
   [5]: http://prince.gr/
   [6]: https://github.com/vdw/HideSeek/issues?utf8=%E2%9C%93&q=label%3Aquestion
   [7]: https://github.com/vdw/HideSeek/issues?utf8=%E2%9C%93&q=label%3Aenhancement
+  [8]: https://rawgit.com/
+  [9]: https://cdn.rawgit.com/vdw/HideSeek/master/jquery.hideseek.min.js
+  [10]: https://rawgit.com/vdw/HideSeek/master/jquery.hideseek.min.js
