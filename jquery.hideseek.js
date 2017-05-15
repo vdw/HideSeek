@@ -42,6 +42,7 @@
       list:           '.hideseek-data',
       nodata:         '',
       attribute:      'text',
+      matches:        false,
       highlight:      false,
       ignore:         '',
       headers:        '',
@@ -59,7 +60,7 @@
 
       $this.opts = [];
 
-      $.map( ['list', 'nodata', 'attribute', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars'], function( val, i ) {
+      $.map( ['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars'], function( val, i ) {
         $this.opts[val] = $this.data(val) || options[val];
       } );
 
@@ -94,8 +95,15 @@
 
             } else {
 
-              $this.opts.highlight ? $(this).removeHighlight().highlight(q).show() : $(this).show();
+              show_element($(this));
 
+              if ($this.opts.matches && q.match(new RegExp(Object.keys($this.opts.matches)[0])) !== null) {
+                if (data.match(new RegExp(Object.values($this.opts.matches)[0])) !== null) {
+                  show_element($(this));
+                } else {
+                  $(this).hide();
+                }
+              }
             }
 
             $this.trigger('_after_each');
@@ -139,6 +147,10 @@
           $this.trigger('_after');
 
         };
+
+        function show_element(element) {
+          $this.opts.highlight ? element.removeHighlight().highlight(q).show() : element.show();
+        }
 
         // Navigation
         function current(element) {
