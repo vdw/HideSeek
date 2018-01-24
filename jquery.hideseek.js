@@ -247,6 +247,13 @@ String.prototype.removeAccents = function(enabled) {
                       .replace(/[óòöôõ]/gi,"o")
                       .replace(/[úùüû]/gi, "u")
                       .replace(/[ç]/gi, "c")
-                      .replace(/[ñ]/gi, "n");
+                      .replace(/[ñň]/gi, "n")
+                      .replace(/[č]/gi, "c")
+                      .replace(/[ĺľ]/gi, "l")
+                      .replace(/[ŕř]/gi, "r")
+                      .replace(/[š]/gi, "s")
+                      .replace(/[ť]/gi, "t")
+                      .replace(/[ý]/gi, "y")
+                      .replace(/[ž]/gi, "z");
   return this;
 };
