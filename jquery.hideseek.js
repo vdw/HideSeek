@@ -75,7 +75,7 @@
 
       $this.keyup(function(e) {
 
-        if ( [38, 40, 13].indexOf(e.keyCode) == -1 && ( e.keyCode != 8 ? $this.val().length >= $this.opts.min_chars : true ) ) {
+        if ( [38, 40, 13].indexOf(e.keyCode) == -1 && ( [8, 27, 46].indexOf(e.keyCode) == -1 ? $this.val().length >= $this.opts.min_chars : true ) ) {
 
           var q = $this.val().toLowerCase();
 
