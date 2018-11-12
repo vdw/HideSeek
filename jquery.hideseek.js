@@ -49,7 +49,9 @@
       navigation:     false,
       ignore_accents: false,
       hidden_mode:    false,
-      min_chars:      1
+      min_chars:      ,
+      and:            false,
+      or:             true 
     };
 
     var options = $.extend(defaults, options);
@@ -60,7 +62,7 @@
 
       $this.opts = [];
 
-      $.map( ['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars'], function( val, i ) {
+      $.map( ['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars', 'and'], function( val, i ) {
         $this.opts[val] = $this.data(val) || options[val];
       } );
 
@@ -78,6 +80,13 @@
         if ( [38, 40, 13].indexOf(e.keyCode) == -1 && ( e.keyCode != 8 ? $this.val().length >= $this.opts.min_chars : true ) ) {
 
           var q = $this.val().toLowerCase();
+          var qs = null;
+
+          if ($this.opts.and) {
+            qs = q.split('&&');
+          } else if ($this.opts.or) {
+            qs = q.split('||');
+          }
 
           $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function() {
 
@@ -87,7 +96,18 @@
                           : $(this).text()
                         ).toLowerCase();
 
-            var treaty = data.removeAccents($this.opts.ignore_accents).indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false)
+            var accentFreeData = data.removeAccents($this.opts.ignore_accents);
+            var treaty = null;
+
+            if ($this.opts.and) {
+              treaty = qs.every(function(q) {return accentFreeData.indexOf(q) == -1;}) || q === ($this.opts.hidden_mode ? '' : false)
+            } else if ($this.opts.or) {
+              treaty = qs.some(function(q) {return accentFreeData.indexOf(q) == -1;}) || q === ($this.opts.hidden_mode ? '' : false)
+            } else {
+              treaty = accentFreeData.indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false)  
+            }
+            
+            window.alert("q:" + q + " qs:" + qs + " tr:" + treaty);
 
             if (treaty) {
 

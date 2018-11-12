@@ -45,4 +45,8 @@ $(document).ready(function() {
     alert('This alert comes after the procession of each element!')
   });
 
+  $('#search-or').hideseek({
+    or: true
+  });
+
 });
