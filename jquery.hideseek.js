@@ -49,9 +49,9 @@
       navigation:     false,
       ignore_accents: false,
       hidden_mode:    false,
-      min_chars:      ,
-      and:            false,
-      or:             true 
+      min_chars:      1,
+      use_and:        false,
+      use_or:         false 
     };
 
     var options = $.extend(defaults, options);
@@ -62,9 +62,11 @@
 
       $this.opts = [];
 
-      $.map( ['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars', 'and'], function( val, i ) {
+      $.map( ['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars', 'use_and', 'use_or'], function( val, i ) {
         $this.opts[val] = $this.data(val) || options[val];
       } );
+
+      if ($this.opts.use_and) $this.opts.use_or = false;
 
       if ($this.opts.headers)
         $this.opts.ignore += $this.opts.ignore ? ', ' + $this.opts.headers : $this.opts.headers;
@@ -82,12 +84,6 @@
           var q = $this.val().toLowerCase();
           var qs = null;
 
-          if ($this.opts.and) {
-            qs = q.split('&&');
-          } else if ($this.opts.or) {
-            qs = q.split('||');
-          }
-
           $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function() {
 
             var data = (
@@ -99,15 +95,21 @@
             var accentFreeData = data.removeAccents($this.opts.ignore_accents);
             var treaty = null;
 
-            if ($this.opts.and) {
-              treaty = qs.every(function(q) {return accentFreeData.indexOf(q) == -1;}) || q === ($this.opts.hidden_mode ? '' : false)
-            } else if ($this.opts.or) {
-              treaty = qs.some(function(q) {return accentFreeData.indexOf(q) == -1;}) || q === ($this.opts.hidden_mode ? '' : false)
+            if ($this.opts.use_and) {
+
+              qs = q.split('&&').filter(function(q) { return q !== ''});
+              treaty = qs.some(function(q) {return accentFreeData.indexOf(q) == -1;}) || q === ($this.opts.hidden_mode ? '' : false);
+
+            } else if ($this.opts.use_or) {
+
+              qs = q.split('||').filter(function(q) { return q !== ''});
+              treaty = qs.length == 0 ? false : qs.every(function(q) {return accentFreeData.indexOf(q) == -1;}) || q === ($this.opts.hidden_mode ? '' : false);
+              
             } else {
-              treaty = accentFreeData.indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false)  
+
+              treaty = accentFreeData.indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false);
+
             }
-            
-            window.alert("q:" + q + " qs:" + qs + " tr:" + treaty);
 
             if (treaty) {
 
