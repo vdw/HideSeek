@@ -49,7 +49,9 @@
       navigation:     false,
       ignore_accents: false,
       hidden_mode:    false,
-      min_chars:      1
+      min_chars:      1,
+      use_and:        false,
+      use_or:         false 
     };
 
     var options = $.extend(defaults, options);
@@ -60,9 +62,11 @@
 
       $this.opts = [];
 
-      $.map( ['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars'], function( val, i ) {
+      $.map( ['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars', 'use_and', 'use_or'], function( val, i ) {
         $this.opts[val] = $this.data(val) || options[val];
       } );
+
+      if ($this.opts.use_and) $this.opts.use_or = false;
 
       if ($this.opts.headers)
         $this.opts.ignore += $this.opts.ignore ? ', ' + $this.opts.headers : $this.opts.headers;
@@ -78,6 +82,7 @@
         if ( [38, 40, 13].indexOf(e.keyCode) == -1 && ( e.keyCode != 8 ? $this.val().length >= $this.opts.min_chars : true ) ) {
 
           var q = $this.val().toLowerCase();
+          var qs = null;
 
           $list.children($this.opts.ignore.trim() ? ":not(" + $this.opts.ignore + ")" : '').removeClass('selected').each(function() {
 
@@ -87,7 +92,24 @@
                           : $(this).text()
                         ).toLowerCase();
 
-            var treaty = data.removeAccents($this.opts.ignore_accents).indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false)
+            var accentFreeData = data.removeAccents($this.opts.ignore_accents);
+            var treaty = null;
+
+            if ($this.opts.use_and) {
+
+              qs = q.split('&&').filter(function(q) { return q !== ''});
+              treaty = qs.some(function(q) {return accentFreeData.indexOf(q) == -1;}) || q === ($this.opts.hidden_mode ? '' : false);
+
+            } else if ($this.opts.use_or) {
+
+              qs = q.split('||').filter(function(q) { return q !== ''});
+              treaty = qs.length == 0 ? false : qs.every(function(q) {return accentFreeData.indexOf(q) == -1;}) || q === ($this.opts.hidden_mode ? '' : false);
+              
+            } else {
+
+              treaty = accentFreeData.indexOf(q) == -1 || q === ($this.opts.hidden_mode ? '' : false);
+
+            }
 
             if (treaty) {
 
