@@ -46,7 +46,11 @@ $(document).ready(function() {
   });
 
   $('#search-or').hideseek({
-    or: true
+    use_or: true
+  });
+
+  $('#search-and').hideseek({
+    use_and: true
   });
 
 });
