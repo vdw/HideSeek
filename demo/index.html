@@ -313,6 +313,37 @@ $('#search-hidden-mode').hideseek({
         </div>
       </div>
 
+      <div class="row">
+        <div class="six columns">
+          <article>
+            <h4>Throttling</h4>
+<pre data-language="javascript">
+$('#search-throttle').hideseek({
+  throttle: 2000
+});
+</pre>
+          </article>
+        </div>
+        <div class="six columns">
+          <article>
+            <label for="search">Top 10 Fascinating Graves in Père Lachaise</label>
+            <input id="search-throttle" name="search" placeholder="Start typing here" type="text" data-list=".throttle_list" data-nodata="No results found" autocomplete="off">
+            <ul class="vertical throttle_list">
+              <li>Oscar Wilde</li>
+              <li>Abelard and Heloise</li>
+              <li>Victor Noir</li>
+              <li>Théodore Géricault</li>
+              <li>Colette</li>
+              <li>Jim Morrison</li>
+              <li>Chopin</li>
+              <li>Molière</li>
+              <li>Georges Rodenbach</li>
+              <li>Félix Faure</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
     </div>
   </section>
 

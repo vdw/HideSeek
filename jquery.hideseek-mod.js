@@ -4,7 +4,7 @@
  * @copyright Copyright 2015, Dimitris Krestos
  * @license   Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
  * @link      http://vdw.staytuned.gr
- * @version   v0.8.0
+ * @version   v0.8.1
  *
  * Dependencies are include in minified versions at the bottom:
  * 1. Highlight v4 by Johann Burkard
@@ -49,7 +49,8 @@
       navigation:     false,
       ignore_accents: false,
       hidden_mode:    false,
-      min_chars:      1
+      min_chars: 1,
+      throttle: 0,
     };
 
     var options = $.extend(defaults, options);
@@ -60,7 +61,7 @@
 
       $this.opts = [];
 
-      $.map( ['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars'], function( val, i ) {
+      $.map( ['list', 'nodata', 'attribute', 'matches', 'highlight', 'ignore', 'headers', 'navigation', 'ignore_accents', 'hidden_mode', 'min_chars', 'throttle'], function( val, i ) {
         $this.opts[val] = $this.data(val) || options[val];
       } );
 
@@ -73,7 +74,7 @@
 
       if ($this.opts.hidden_mode) $list.children().hide();
 
-      $this.keyup(function(e) {
+      $this.keyup(throttle(function(e) {
 
         if ( [38, 40, 13].indexOf(e.keyCode) == -1 && ( e.keyCode != 8 ? $this.val().length >= $this.opts.min_chars : true ) ) {
 
@@ -211,11 +212,29 @@
 
         };
 
-      });
+      }, $this.opts.throttle));
 
     });
 
   };
+
+  function throttle(func, time) {
+    if (!time || typeof time !== "number" || time <= 0) {
+        return func;
+    }
+
+    var throttleTimer = 0;
+
+    return function() {
+      var args = arguments;
+
+      clearTimeout(throttleTimer);
+
+      throttleTimer = setTimeout(function() {
+        func.apply(null, args);
+      }, time);
+    }
+  }
 
   $(document).ready(function () { $('[data-toggle="hideseek"]').hideseek(); });
 

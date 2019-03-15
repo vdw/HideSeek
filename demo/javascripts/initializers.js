@@ -35,6 +35,10 @@ $(document).ready(function() {
     hidden_mode: true
   });
 
+  $('#search-throttle').hideseek({
+    throttle: 2000
+  });
+
   $('#search-custom-event').hideseek();
   $('#search-custom-event').on("_after", function() {
     alert('This alert comes after the search!')
