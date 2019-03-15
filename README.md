@@ -20,6 +20,7 @@ This is a forked and modified version of the original library. The original proj
 * Custom messages
 * Hidden mode
 * Support lists with headings
+* Throttling
 
 ## Compatibility
 
