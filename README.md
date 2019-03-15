@@ -43,7 +43,7 @@ Served using [RawGit][8]:
 
 ## Changelog
 ### v0.8.1
-* Throttling - delayed search with cancelation if the next keystroke arrives
+* Throttling - delayed search with cancellation if the next keystroke arrives
 
 ## Copyright and license
 
