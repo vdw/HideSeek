@@ -45,7 +45,6 @@ Served using [RawGit][8]:
 ### v0.8.1
 * Throttling - delayed search with cancelation if the next keystroke arrives
 
-
 ## Copyright and license
 
 Copyright 2015 Dimitris Krestos
