@@ -1,8 +1,10 @@
-# HideSeek
+# HideSeek-Mod
 
 [![npm version](https://badge.fury.io/js/hideseek.png)](http://badge.fury.io/js/hideseek)
 
-A simple, yet customizable quick/live search jQuery plugin
+A simple, yet customizable quick/live search jQuery plugin.
+
+This is a forked and modified version of the original library. The original project seems to be dead for a while (2 years now) and author is not responsive. Aim of this fork is to keep it active and open for new features and fixes.
 
 * [Demonstration page][1]
 * [Documentation (wiki)][3]
@@ -55,13 +57,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-  [1]: http://vdw.github.io/HideSeek/
+  [1]: http://maxwroc.github.io/HideSeek-Mod/
   [2]: http://www.apache.org/licenses/LICENSE-2.0
-  [3]: https://github.com/vdw/HideSeek/wiki
+  [3]: https://github.com/maxwroc/HideSeek/wiki
   [4]: http://stevy.gr/
   [5]: http://prince.gr/
-  [6]: https://github.com/vdw/HideSeek/issues?utf8=%E2%9C%93&q=label%3Aquestion
-  [7]: https://github.com/vdw/HideSeek/issues?utf8=%E2%9C%93&q=label%3Aenhancement
+  [6]: https://github.com/maxwroc/HideSeek-Mod/issues?utf8=%E2%9C%93&q=label%3Aquestion
+  [7]: https://github.com/maxwroc/HideSeek-Mod/issues?utf8=%E2%9C%93&q=label%3Aenhancement
   [8]: https://rawgit.com/
-  [9]: https://cdn.rawgit.com/vdw/HideSeek/master/jquery.hideseek.min.js
-  [10]: https://rawgit.com/vdw/HideSeek/master/jquery.hideseek.min.js
+  [9]: https://cdn.rawgit.com/maxwroc/HideSeek-Mod/master/jquery.hideseek-mod.min.js
+  [10]: https://rawgit.com/maxwroc/HideSeek-Mod/master/jquery.hideseek-mod.min.js

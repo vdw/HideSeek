@@ -1,5 +1,5 @@
 /**
- * HideSeek jQuery plugin
+ * HideSeek-Mod jQuery plugin
  *
  * @copyright Copyright 2015, Dimitris Krestos
  * @license   Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
