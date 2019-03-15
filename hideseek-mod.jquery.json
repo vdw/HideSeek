@@ -33,10 +33,10 @@
             "url": "http://www.apache.org/licenses/LICENSE-2.0"
         }
     ],
-    "bugs": "https://github.com/vdw/HideSeek/issues",
+    "bugs": "https://github.com/maxwroc/HideSeek-Mod/issues",
     "homepage": "http://vdw.github.io/HideSeek",
-    "docs": "https://github.com/vdw/HideSeek#readme",
-    "download": "https://github.com/vdw/HideSeek/archive/master.zip",
+    "docs": "https://github.com/maxwoc/HideSeek-Mod#readme",
+    "download": "https://github.com/maxwroc/HideSeek-Mod/archive/master.zip",
     "dependencies": {
         "jquery": ">=1.8.x"
     }

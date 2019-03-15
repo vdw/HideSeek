@@ -5,7 +5,7 @@
   "main": "jquery.hideseek-mod.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxwroc/HideSeek.git"
+    "url": "https://github.com/maxwroc/HideSeek-Mod.git"
   },
   "keywords": [
     "jquery-plugin",
@@ -18,7 +18,7 @@
   "author": "Dimitris Krestos <dkrestos@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/maxwroc/HideSeek/issues"
+    "url": "https://github.com/maxwroc/HideSeek-Mod/issues"
   },
-  "homepage": "https://github.com/maxwroc/HideSeek"
+  "homepage": "https://github.com/maxwroc/HideSeek-Mod"
 }
