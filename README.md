@@ -57,7 +57,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-  [1]: http://vdw.github.io/HideSeek/
+  [1]: http://maxwroc.github.io/HideSeek-Mod/
   [2]: http://www.apache.org/licenses/LICENSE-2.0
   [3]: https://github.com/maxwroc/HideSeek/wiki
   [4]: http://stevy.gr/
