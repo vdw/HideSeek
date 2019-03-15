@@ -1,0 +1,229 @@
+/**
+ * BlankPlate | Yet another HTML5 Starter Kit
+ *
+ * BlankPlate Main stylesheet
+ *
+ * @copyright	Copyright 2012, Dimitris Krestos
+ * @license		Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
+ * @link		http://vdw.staytuned.gr/html5-starter-kit-blankplate/
+ * @package		BlankPlate
+ * @version		v1.2.3
+ */
+
+/**
+ * WORLD
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+BODY {
+	font-family: "Open Sans", helvetica, arial, sans-serif;
+}
+
+H2 {
+	font-weight: 300;
+}
+
+UL, LI {
+	color: #c6c6c6;
+	font-size: 15px;
+	line-height: 24px !important;
+}
+
+LI A {
+	color: inherit;
+}
+
+INPUT[type="text"] {
+  background: #F1F1F1;
+  border: 0;
+  border-bottom: 1px solid #c6c6c6;
+  border-radius: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  text-indent: 10px;
+  width: 100%;
+}
+
+/* Clear fix */
+.clear {
+	clear: both;
+	float: none;
+	font-size: 1px;
+	height: 0px;
+	line-height: 0
+}
+
+/**
+ * HEADER
+ * Your header rules
+ * -------------------------------------------------------------------------------------------------
+ */
+HEADER {
+	background: #3A3E3D;
+	color: white;
+	min-height: 400px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+HEADER H1 {
+	color: inherit;
+	font-size: 48px;
+	letter-spacing: 4px;
+	padding-top: 120px;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+HEADER H2 {
+	color: inherit;
+	font-size: 18px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+}
+
+/**
+ * BODY
+ * Your content rules
+ * -------------------------------------------------------------------------------------------------
+ */
+.separator {
+	background: white;
+	border-bottom: 1px solid #E5E5E5;
+	color: #888;
+	font-size: 16px;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 80px;
+	letter-spacing: 2px;
+	width: 100%;
+}
+
+SECTION#body {
+	background: #f5a732;
+}
+
+SECTION#body H2 {
+	color: white;
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 34px;
+	margin-top: 2rem;
+}
+
+SECTION {
+	background: #F1F1F1;
+	/*margin-top: 80px;*/
+	width: 100%;
+}
+
+ARTICLE {
+	margin: 0 auto;
+	padding: 30px 0 20px;
+	max-width: 940px;
+}
+
+ARTICLE UL {
+	list-style: none;
+}
+
+ARTICLE H4 {
+	color: #E95855;
+	margin-bottom: 10px;
+}
+
+ARTICLE LABEL {
+  background: #F5A732;
+  color: white;
+  display: block;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 20px;
+  padding: 10px 0;
+  text-indent: 10px;
+  width: 100%;
+}
+
+/**
+ * FOOTER
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+FOOTER {
+	width: 100%;
+	color: #888;
+	margin: 20px auto;
+}
+
+/**
+ * SEARCH
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+.button {
+	background-color: #f5a732;
+	border: none;
+	border-bottom: 4px solid #cd8722;
+	color: #FFFFFF;
+	border-radius: 0;
+	font-size: 14px;
+	letter-spacing: 2px;
+	height: 48px;
+	line-height: 48px;
+}
+
+.button:hover {
+	background: #f4ac40;
+	color: #FFF;
+	border-bottom-color: #cd8722;
+}
+
+.link {
+	color: white;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 48px;
+	margin-top: 20px;
+	margin-left: 6px;
+	text-decoration: none;
+}
+
+.link:hover {
+	text-decoration: underline;
+	color: inherit;
+}
+
+.anchorLink {
+	border-bottom: 1px dashed white;
+	color: white;
+	text-decoration: none;
+}
+
+.anchorLink:hover {
+	text-decoration: none;
+	border-bottom: none;
+	color: inherit;
+}
+
+.screenshot {
+	position: absolute;
+	clip: rect(0 0 0 0);
+}
+
+.selected {
+	background: white;
+	padding: 2px 8px;
+}
+
+.logo {
+	margin-top: -6px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.origin {
+	font-weight: bold;
+	margin-left: 8px;
+}
