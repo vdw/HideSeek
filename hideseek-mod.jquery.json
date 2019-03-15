@@ -1,0 +1,43 @@
+{
+    "name": "hideseek-mod",
+    "title": "jQuery HideSeek-Mod",
+    "description": "A simple, yet customizable live search jQuery plugin.",
+    "keywords": [
+    "jquery-plugin",
+    "live",
+    "search",
+    "jquery",
+    "hideseek",
+    "hideseek-mod"
+    ],
+    "version": "0.8.0",
+    "author": {
+        "name": "Dimitris Krestos",
+        "email": "dkrestos@gmail.com",
+        "url": "https://github.com/vdw"
+    },
+    "maintainers": [
+        {
+            "name": "Dimitris Krestos",
+            "email": "dkrestos@gmail.com",
+            "url": "https://github.com/vdw"
+        },
+        {
+            "name": "Max Chodorowski",
+            "url": "https://github.com/maxwroc"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "Apache",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+    ],
+    "bugs": "https://github.com/vdw/HideSeek/issues",
+    "homepage": "http://vdw.github.io/HideSeek",
+    "docs": "https://github.com/vdw/HideSeek#readme",
+    "download": "https://github.com/vdw/HideSeek/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.8.x"
+    }
+}

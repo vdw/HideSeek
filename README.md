@@ -1,8 +1,10 @@
-# HideSeek
+# HideSeek-Mod
 
 [![npm version](https://badge.fury.io/js/hideseek.png)](http://badge.fury.io/js/hideseek)
 
-A simple, yet customizable quick/live search jQuery plugin
+A simple, yet customizable quick/live search jQuery plugin.
+
+This is a forked and modified version of the original library. The original project seems to be dead for a while (2 years now) and author is not responsive. Aim of this fork is to keep it active and open for new features and fixes.
 
 * [Demonstration page][1]
 * [Documentation (wiki)][3]
