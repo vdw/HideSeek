@@ -9,31 +9,27 @@
  * Dependencies are include in minified versions at the bottom:
  * 1. Highlight v4 by Johann Burkard
  *
+ * Sample html structure
+ *
+ *   <input name="search" placeholder="Start typing here" type="text" data-list=".list">
+ *   <ul class="list">
+ *     <li>item 1</li>
+ *     <li>...</li>
+ *     <li><a href="#">item 2</a></li>
+ *   </ul>
+ *
+ *   or
+ *
+ *   <input name="search" placeholder="Start typing here" type="text" data-list=".list">
+ *   <div class="list">
+ *     <span>item 1</span>
+ *     <span>...</span>
+ *     <span>item 2</span>
+ *   </div>
+ *
+ *   or any similar structure...
  */
-
-  /* Sample html structure
-
-  <input name="search" placeholder="Start typing here" type="text" data-list=".list">
-  <ul class="list">
-    <li>item 1</li>
-    <li>...</li>
-    <li><a href="#">item 2</a></li>
-  </ul>
-
-  or
-
-  <input name="search" placeholder="Start typing here" type="text" data-list=".list">
-  <div class="list">
-    <span>item 1</span>
-    <span>...</span>
-    <span>item 2</span>
-  </div>
-
-  or any similar structure...
-
-  */
-
-;(function($, window, undefined) {
+;(function($) {
   "use strict";
 
   $.fn.hideseek = function(options) {
@@ -240,24 +236,23 @@
 
 })(jQuery);
 
-/*
-
-highlight v4
-
-Highlights arbitrary terms.
-
-<http://johannburkard.de/blog/programming/javascript/highlight-javascript-text-higlighting-jquery-plugin.html>
-
-MIT license.
-
-Johann Burkard
-<http://johannburkard.de>
-<mailto:jb@eaio.com>
-
-*/
+/**
+ * highlight v4
+ *
+ * Highlights arbitrary terms.
+ *
+ * <http://johannburkard.de/blog/programming/javascript/highlight-javascript-text-higlighting-jquery-plugin.html>
+ *
+ * @license MIT
+ * @author Johann Burkard <mailto:jb@eaio.com>
+ * @link http://johannburkard.de
+ */
 jQuery.fn.highlight=function(t){function e(t,i){var n=0;if(3==t.nodeType){var a=t.data.removeAccents(true).toUpperCase().indexOf(i);if(a>=0){var s=document.createElement("mark");s.className="highlight";var r=t.splitText(a);r.splitText(i.length);var o=r.cloneNode(!0);s.appendChild(o),r.parentNode.replaceChild(s,r),n=1}}else if(1==t.nodeType&&t.childNodes&&!/(script|style)/i.test(t.tagName))for(var h=0;h<t.childNodes.length;++h)h+=e(t.childNodes[h],i);return n}return this.length&&t&&t.length?this.each(function(){e(this,t.toUpperCase())}):this},jQuery.fn.removeHighlight=function(){return this.find("mark.highlight").each(function(){with(this.parentNode.firstChild.nodeName,this.parentNode)replaceChild(this.firstChild,this),normalize()}).end()};
 
-// Ignore accents
+/**
+ * Removing accents from string
+ * @preserve
+ */
 String.prototype.removeAccents = function(enabled) {
   if (enabled) return this
                       .replace(/[áàãâä]/gi,"a")
