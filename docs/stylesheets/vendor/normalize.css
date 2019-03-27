@@ -140,7 +140,7 @@ h1 {
 /**
  * Address styling not present in IE 8/9.
  */
-
+span.highlight,
 mark {
   background: #ff0;
   color: #000;
