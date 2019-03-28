@@ -302,12 +302,18 @@
   function removeAccents(text) {
     return text
       .replace(/[áàãâä]/gi, "a")
+      .replace(/[çč]/gi, "c")
       .replace(/[éè¨ê]/gi, "e")
       .replace(/[íìïî]/gi, "i")
+      .replace(/[ĺľ]/gi, "l")
+      .replace(/[ñň]/gi, "n")
       .replace(/[óòöôõ]/gi, "o")
+      .replace(/[ŕř]/gi, "r")
+      .replace(/[š]/gi, "s")
+      .replace(/[ť]/gi, "t")
       .replace(/[úùüû]/gi, "u")
-      .replace(/[ç]/gi, "c")
-      .replace(/[ñ]/gi, "n");
+      .replace(/[ý]/gi, "y")
+      .replace(/[ž]/gi, "z");
   };
 
   hideseek.removeAccents = removeAccents;
