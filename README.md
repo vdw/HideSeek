@@ -47,9 +47,9 @@ Served using [RawGit][8]:
 * Throttling - delayed search with cancellation if the next keystroke arrives
 
 ## Development
-To prepare pull request and to test your changes you need to update bundles. The easiest way to do it is via NPM script.
+To test your changes and prepare pull request you need to update bundles. The easiest way to do it is via build script.
 
-First you need to install dependencies (trying to keep low number of them - currently 3 are being installed).
+First you need to install node dependencies (trying to keep low number of them - currently 3 are being installed).
 ```
 npm install
 ```
@@ -95,4 +95,4 @@ limitations under the License.
   [7]: https://github.com/maxwroc/HideSeek-Mod/issues?utf8=%E2%9C%93&q=label%3Aenhancement
   [8]: https://rawgit.com/
   [9]: https://cdn.rawgit.com/maxwroc/HideSeek-Mod/master/bundle/jquery.hideseek-mod.min.js
-  [10]: https://rawgit.com/maxwroc/HideSeek-Mod/master/bundle/jquery.hideseek-mod.min.js
+  [10]: https://rawgit.com/maxwroc/HideSeek-Mod/master/bundle/jquery.hideseek-mod.js
