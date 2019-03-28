@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/maxwroc/HideSeek-Mod.git"
   },
+  "scripts": {
+    "build": "node utils/build.js"
+  },
   "keywords": [
     "jquery-plugin",
     "live",
@@ -20,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/maxwroc/HideSeek-Mod/issues"
   },
-  "homepage": "https://github.com/maxwroc/HideSeek-Mod"
+  "homepage": "https://github.com/maxwroc/HideSeek-Mod",
+  "devDependencies": {
+    "uglify-js": "^3.4.10"
+  }
 }
